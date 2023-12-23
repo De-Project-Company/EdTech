@@ -2,7 +2,7 @@ import React from 'react';
 import Top from '../assets/home/top.svg';
 import Butt from '../assets/home/butt.svg';
 import Cards from '../assets/home/cards.svg';
-import Girl from "../assets/home/girl.svg"
+import Girl from '../assets/home/girl.svg';
 
 const Home = () => {
 	return (
