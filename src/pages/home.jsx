@@ -3,10 +3,17 @@ import Top from '../assets/home/top.svg';
 import Butt from '../assets/home/butt.svg';
 import Cards from '../assets/home/cards.svg';
 import Girl from '../assets/home/girl.svg';
+import Background from "../assets/home/Background.svg"
 
 const Home = () => {
 	return (
 		<div className="h-auto">
+			<img
+				src={Background}
+				alt="background image"
+				className="absolute z-[-20] h-screen animate-spin right-9 duration-10000"
+			/>
+
 			<div className="px-[68px]">
 				<img src={Top} alt="topimage" className="top-0" />
 				<div className="flex h-full justify-center items-center pt-6 w-[1331px]">
