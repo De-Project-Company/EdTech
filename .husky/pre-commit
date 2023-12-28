@@ -3,13 +3,11 @@
 
 echo '🏗️👷 Running checks on your code before committing' 🔍🧐
 
-# Check Prettier standards
-npm run check-format ||
-(
-    echo '🤢🤮🤢🤮 Its so ugly!! - Your styling looks disgusting. 🤢🤮🤢🤮
-            Prettier Check Failed. Run npm run format, add changes and try commit again.';
-    false;
-)
+echo "styling your work"
+
+# Styling Prettier standards
+npm run format
+
 
 echo '🏗️👷 checking for eslint errors' 🔍🧐
 
@@ -31,7 +29,6 @@ npm run check-types ||
     false;
 )
 
-npm run format
 
 npx lint-staged
 

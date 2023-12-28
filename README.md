@@ -27,7 +27,7 @@ npm install
 Then run:
 
 ```bash
-npm run start
+npm run dev
 ```
 
 # Dependencies
