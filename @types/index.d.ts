@@ -18,3 +18,5 @@ export type TBreadCrumbProps = {
   activeClasses?: string;
   capitalizeLinks?: boolean;
 };
+
+export type UseInView = <T extends Element>(ref: RefObject<T>) => boolean;
