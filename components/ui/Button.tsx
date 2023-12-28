@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ButtonProps } from '../../@types';
 
 const buttonVariants = cva(
-  'relative px-4 py-3 flex items-center justify-center gap-5 w-fit h-[48px] rounded-[16px] font-manropeB text-white-100',
+  'relative px-4 py-3 flex items-center justify-center gap-5 w-fit h-[48px] rounded-[16px] text-white-100',
   {
     variants: {
       intent: {

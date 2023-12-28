@@ -9,3 +9,12 @@ export interface ButtonProps extends ButtonVariants {
   spinnerColor?: string;
   spinnerSize?: string | number;
 }
+
+export type TBreadCrumbProps = {
+  homeElement: ReactNode;
+  separator: ReactNode;
+  containerClasses?: string;
+  listClasses?: string;
+  activeClasses?: string;
+  capitalizeLinks?: boolean;
+};
