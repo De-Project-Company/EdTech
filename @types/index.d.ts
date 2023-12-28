@@ -9,3 +9,6 @@ export interface ButtonProps extends ButtonVariants {
   spinnerColor?: string;
   spinnerSize?: string | number;
 }
+
+
+export type UseInView = <T extends Element>(ref: RefObject<T>) => boolean;
