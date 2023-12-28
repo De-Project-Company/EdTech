@@ -2,21 +2,22 @@ import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
-import { ButtonProps } from '../../@types';
 
 const buttonVariants = cva(
-  'relative px-4 py-3 flex items-center justify-center gap-5 w-fit h-[48px] rounded-[16px] text-white-100',
+  'relative px-4 py-3 flex items-center justify-center gap-5 w-fit h-[48px] rounded-[16px] font-manropeB text-white-100',
   {
     variants: {
       intent: {
         primary:
-          'bg-primary hover:bg-primary-light hover focus:bg-primary text-white active:bg-primary disabled:bg-disabled disabled:cursor-not-allowed ',
+          'bg-brand-green-primary hover:bg-brand-green-hover focus:bg-brand-green-focused active:bg-brand-green-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed ',
         secondary:
-          'bg-primary-light text-white hover:bg-white focus:shadow-primary active:bg-priamry-light disabled:bg-disabled border-solid border-[2px] border-primary-light hover:text-primary-light ',
+          'bg-white-100 text-brand-green-primary hover:bg-[#F4FBF6] focus:shadow-brand-green-shd active:bg-brand-green-shd disabled:bg-brand-disabled border-solid border-[2px] border-brand-green-primary ',
         success:
-          'bg-success hover:bg-success-hover text-white focus:bg-success  disabled:bg-disabled disabled:cursor-not-allowed ',
+          'bg-brand-success-primary hover:bg-brand-success-hover focus:bg-brand-success-focused active:bg-brand-success-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed ',
+        tertiary:
+          'bg-brand-green-ttr text-brand-green-primary hover:bg-[#F4FBF6] focus:shadow-brand-green-shd active:bg-brand-green-shd disabled:bg-brand-disabled disabled:cursor-not-allowed ',
         error:
-          'bg-error text-white-100 hover:bg-error active:bg-error disabled:bg-disabled disabled:cursor-not-allowed'
+          'bg-brand-red-primary text-white-100 hover:bg-brand-red-hover focus:bg-brand-red-focused active:bg-brand-red-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed'
       },
       size: {
         sm: 'text-sm py-2',
@@ -38,6 +39,18 @@ export interface ButtonVariants
     >,
     VariantProps<typeof buttonVariants> {}
 
+export interface ButtonProps extends ButtonVariants {
+  children: React.ReactNode;
+  className?: React.ComponentProps<'div'>['className'];
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  isLoading?: boolean;
+  disabled?: boolean;
+  href?: string;
+  spinnerColor?: string;
+  spinnerSize?: string | number;
+}
+
 const Button: React.FC<ButtonProps> = ({
   children,
   isLoading,
@@ -54,6 +67,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
+      // @ts-expect-error
       <Link href={href} className={classNames} {...props}>
         {leftIcon && leftIcon}
         {children}
@@ -75,7 +89,7 @@ const Button: React.FC<ButtonProps> = ({
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           className={twMerge(
-            ' animate-spin transition delay-[0.2s] ',
+            ' animate-spin transition delay-[.2] ',
             isLoading ? 'opacity-1 visible' : 'opacity-0 hidden'
           )}
         >

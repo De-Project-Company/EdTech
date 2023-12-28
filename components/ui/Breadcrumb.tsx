@@ -3,15 +3,7 @@
 import React, { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
-type TBreadCrumbProps = {
-  homeElement: ReactNode;
-  separator: ReactNode;
-  containerClasses?: string;
-  listClasses?: string;
-  activeClasses?: string;
-  capitalizeLinks?: boolean;
-};
+import { TBreadCrumbProps } from '../../@types';
 
 const Breadcrumb = ({
   homeElement,
