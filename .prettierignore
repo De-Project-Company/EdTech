@@ -1,7 +1,0 @@
-./dist
-
-**/*.yml
-**/*.md
-**/*.json
-.prettierrc
-postcss.config.js
