@@ -41,7 +41,7 @@ npm run dev
 
 ## FONT
 
-- Work Sans ---> usage "font-Worksans"
+- Work Sans ---> usage "font-Worksans". // Not the Default Font just a fall back font 
 
 ## Dev Server
 
