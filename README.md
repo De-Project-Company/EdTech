@@ -110,7 +110,7 @@ Under no circumstances should you merge a pull requests on a specific branch to 
 
 # API
 
-A separate folder called `api` is created withing the app folder here, to make an **API** Call:
+A separate folder called `api` is created in the root dir  here, to make an **API** Call:
 
 - create a new folder within the `api` dir
 - within the created folder create a file with the name of the aspect you are working on example  `authapi.ts` file
