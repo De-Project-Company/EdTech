@@ -10,6 +10,7 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Merging](#merging)
+- [API](#api)
 
 
 # Description
@@ -105,4 +106,15 @@ Under no circumstances should you merge a pull requests on a specific branch to 
 
 - `chore: Updated README file` := `chore` is used because the commit didn't make any changes to the , frontend or test folders in any way.
 - `feat: Added plugin info endpoints` := `feat` is used here because the feature was non-existent before the commit.
+
+
+# API
+
+A separate folder called `api` is created withing the app folder here, to make an **API** Call:
+
+- create a new folder within the `api` dir
+- within the created folder create a file with the name of the aspect you are working on example  `authapi.ts` file
+- within the file yu created `authapi.ts` file you make either a **GET** or **POST** Request
+
+> ❗❗Do not create any custom http calls inside a components. Whatever calls that need to be processed by the server should be called within the file you created
 
