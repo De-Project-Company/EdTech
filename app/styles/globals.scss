@@ -1,3 +1,40 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-255');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// ======MISCELLANEOUS=========
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.hide-scroll::-webkit-scrollbar {
+  width: 0px;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #4221b0;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4221b0;
+  border-radius: 8px;
+}
+
+::selection {
+  color: white;
+  background: #4221b0;
+}

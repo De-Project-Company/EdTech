@@ -47,3 +47,10 @@ export interface ProgressBarProps {
   color: string;
   value: number;
 }
+
+export type SidebarAdminProps = {
+  id?: number;
+  label: string;
+  icon: Icon;
+  link: string;
+};

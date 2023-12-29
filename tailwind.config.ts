@@ -17,6 +17,7 @@ const config: Config = {
         header: '#282828',
         card: '#FBF9FA',
         checked: '#2E577D',
+        sidebar: "#1A0D46",
         test: '#2e5773',
         disabled: '#868E96',
         white: '#ffffff',
