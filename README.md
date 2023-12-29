@@ -6,7 +6,6 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [StyleGuide](#styleguide)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -51,6 +50,10 @@ npm run dev
 ## Dev Server
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## StyleGuide
+
+- Open [http://localhost:3000/style-guide](http://localhost:3000/style-guide) to see a full documentation on all reusable components
 
 # Contributing
 
