@@ -3,7 +3,7 @@
 
 echo '🏗️👷 Running checks on your code before committing' 🔍🧐
 
-echo "styling your work"
+echo "styling your work" 🎨✨
 
 # Styling Prettier standards
 npm run format
