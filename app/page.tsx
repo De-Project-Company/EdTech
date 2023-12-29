@@ -4,7 +4,7 @@ import Button from '@ui/Button';
 
 export default function Home() {
   return (
-    <main className="h-auto bg-primary z-[-30]">
+    <main className="h-auto bg-primary z-[-30] w-full">
       <Image
         src="/home/top.svg"
         width="1319"
