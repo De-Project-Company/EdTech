@@ -40,6 +40,10 @@ npm run dev
 # Usage
 
 ## FONT
+### Default Font
+- Helvetica --> usage "font-helveticia".
+
+### Fallback Font
 
 - Work Sans ---> usage "font-Worksans". // Not the Default Font just a fall back font 
 
