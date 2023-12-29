@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Work_Sans } from 'next/font/google';
 import { Helvetia } from '../fonts';
 import './styles/globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-work-sans'
+});
 
 export const metadata: Metadata = {
   title: 'EdTech',
@@ -20,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Helvetia.className}>{children}</body>
+      <body className={workSans.className}>{children}</body>
     </html>
   );
 }
