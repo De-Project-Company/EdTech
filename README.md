@@ -6,6 +6,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
+- [StyleGuide](#styleguide)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Contributing](#contributing)
