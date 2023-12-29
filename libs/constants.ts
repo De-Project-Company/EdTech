@@ -25,38 +25,38 @@ export const SIDEBAR_teachers_LINKS: SidebarteachersProps[] = [
   },
 
   {
-    id: 3,
+    id: 2,
     label: 'Assessments',
     icon: Medal,
     link: 'teachers-assessments'
   },
   {
-    id: 4,
+    id: 3,
     label: 'Classes',
     icon: Keyboard,
     link: 'teachers-classes'
   },
   {
-    id: 5,
+    id: 4,
     label: 'Reports',
     icon: Rank,
     link: 'teachers-reports'
   },
   {
-    id: 6,
+    id: 5,
     label: 'Student Fees',
     icon: Receipt2,
     link: 'teachers-student-fees'
   },
   {
-    id: 7,
+    id: 6,
     label: 'Library',
     icon: Note1,
     link: 'teachers-library'
   },
 
   {
-    id: 9,
+    id: 7,
     label: 'Settings',
     icon: Candle,
     link: 'teachers-settings'
