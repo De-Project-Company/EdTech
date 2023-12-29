@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 
-export const Helvetia = localFont({
+export const Helvetica = localFont({
   src: [
     {
       path: './Helvetica-Light.woff2',
