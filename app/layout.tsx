@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
-import { Helvetia } from '../fonts';
+import { Helvetica } from '../fonts';
 import './styles/globals.scss';
 
 const workSans = Work_Sans({
