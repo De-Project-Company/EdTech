@@ -1,24 +1,22 @@
 import {
   Category,
   type Icon,
-  DocumentCode,
   Medal,
-  MessageQuestion,
-  Briefcase,
+  Receipt2,
+  Keyboard,
   People,
-  WalletMoney,
-  MessageText,
+  Note1,
+  Candle,
   Personalcard,
   Notification,
   AddCircle,
-  Profile2User,
-  ArchiveBook,
+  Rank,
   HomeHashtag
 } from 'iconsax-react';
 
-import { SidebarAdminProps } from '../@types';
+import { SidebarteachersProps } from '../@types';
 
-export const SIDEBAR_ADMIN_LINKS: SidebarAdminProps[] = [
+export const SIDEBAR_teachers_LINKS: SidebarteachersProps[] = [
   {
     id: 1,
     label: 'Dashboard',
@@ -29,45 +27,38 @@ export const SIDEBAR_ADMIN_LINKS: SidebarAdminProps[] = [
   {
     id: 3,
     label: 'Assessments',
-    icon: MessageQuestion,
-    link: 'admin-problem-statements'
+    icon: Medal,
+    link: 'teachers-assessments'
   },
   {
     id: 4,
-    label: 'Projects',
-    icon: Briefcase,
-    link: 'admin-projects'
+    label: 'Classes',
+    icon: Keyboard,
+    link: 'teachers-classes'
   },
   {
     id: 5,
-    label: 'Clients',
-    icon: People,
-    link: 'admin-clients'
+    label: 'Reports',
+    icon: Rank,
+    link: 'teachers-reports'
   },
   {
     id: 6,
-    label: 'Transactions',
-    icon: WalletMoney,
-    link: 'admin-transactions'
+    label: 'Student Fees',
+    icon: Receipt2,
+    link: 'teachers-student-fees'
   },
   {
     id: 7,
-    label: 'Messages',
-    icon: MessageText,
-    link: 'admin-messages'
+    label: 'Library',
+    icon: Note1,
+    link: 'teachers-library'
   },
 
   {
     id: 9,
-    label: 'Notifications',
-    icon: Notification,
-
-    link: 'admin-notifications'
-  },
-  {
-    id: 10,
-    label: 'Invite',
-    icon: AddCircle,
-    link: 'admin-invite'
+    label: 'Settings',
+    icon: Candle,
+    link: 'teachers-settings'
   }
 ];

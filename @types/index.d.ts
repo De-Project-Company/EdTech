@@ -48,7 +48,7 @@ export interface ProgressBarProps {
   value: number;
 }
 
-export type SidebarAdminProps = {
+export type SidebarteachersProps = {
   id?: number;
   label: string;
   icon: Icon;
