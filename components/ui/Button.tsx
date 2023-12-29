@@ -9,15 +9,13 @@ const buttonVariants = cva(
     variants: {
       intent: {
         primary:
-          'bg-brand-green-primary hover:bg-brand-green-hover focus:bg-brand-green-focused active:bg-brand-green-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed ',
+          'bg-primary hover:bg-primary-light hover focus:bg-primary text-white active:bg-primary disabled:bg-disabled disabled:cursor-not-allowed ',
         secondary:
-          'bg-white-100 text-brand-green-primary hover:bg-[#F4FBF6] focus:shadow-brand-green-shd active:bg-brand-green-shd disabled:bg-brand-disabled border-solid border-[2px] border-brand-green-primary ',
+          'bg-primary-light text-white hover:bg-white focus:shadow-primary active:bg-priamry-light disabled:bg-disabled border-solid border-[2px] border-primary-light hover:text-primary-light ',
         success:
-          'bg-brand-success-primary hover:bg-brand-success-hover focus:bg-brand-success-focused active:bg-brand-success-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed ',
-        tertiary:
-          'bg-brand-green-ttr text-brand-green-primary hover:bg-[#F4FBF6] focus:shadow-brand-green-shd active:bg-brand-green-shd disabled:bg-brand-disabled disabled:cursor-not-allowed ',
+          'bg-success hover:bg-success-hover text-white focus:bg-success  disabled:bg-disabled disabled:cursor-not-allowed ',
         error:
-          'bg-brand-red-primary text-white-100 hover:bg-brand-red-hover focus:bg-brand-red-focused active:bg-brand-red-pressed disabled:bg-brand-disabled disabled:cursor-not-allowed'
+          'bg-error text-white-100 hover:bg-error active:bg-error disabled:bg-disabled disabled:cursor-not-allowed'
       },
       size: {
         sm: 'text-sm py-2',
@@ -89,7 +87,7 @@ const Button: React.FC<ButtonProps> = ({
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           className={twMerge(
-            ' animate-spin transition delay-[.2] ',
+            ' animate-spin transition delay-[0.2s] ',
             isLoading ? 'opacity-1 visible' : 'opacity-0 hidden'
           )}
         >
