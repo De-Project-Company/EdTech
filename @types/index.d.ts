@@ -54,3 +54,25 @@ export type SidebarteachersProps = {
   icon: Icon;
   link: string;
 };
+
+// state context
+
+export type User = {
+  name: string;
+  email: string;
+  image: string;
+};
+
+export interface StateContextProps {
+  currentPath: string;
+  // Mobile sidebar props
+  teacherShowMobileMenu: boolean;
+  setteacherShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  modShowMobileMenu: boolean;
+  setModShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  // Miscellaneous
+  swipeIndicator: boolean;
+  setSwipeIndicator: React.Dispatch<React.SetStateAction<boolean>>;
+
+  user: User;
+}

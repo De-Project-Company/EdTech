@@ -1,4 +1,5 @@
 import SidebarTeacher from '../../components/sidebars/teachersSide';
+import TeacherNavbar from '../../components/navs/Teachernav';
 
 export default function AdminLayout({
   children
@@ -9,7 +10,7 @@ export default function AdminLayout({
     <>
       <SidebarTeacher />
       <section className="w-full relative  md:pl-[96px] min-[1140px]:pl-[270px]">
-        {/* <AdminNavbar /> */}
+        <TeacherNavbar />
         <div className="flex w-full flex-col h-full relative max-container pt-12 md:pt-0">
           {children}
         </div>

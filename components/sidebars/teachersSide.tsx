@@ -1,15 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { SIDEBAR_teachers_LINKS } from '../../libs/constants';
 import { useState, useEffect } from 'react';
+import { SIDEBAR_teachers_LINKS } from '../../libs/constants';
 import cn from '../../utils/twcx';
 import { ExportCircle } from 'iconsax-react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-// import { useRouter } from 'next-nprogress-bar';
 
-const SidebarAdmin = () => {
+const SidebarTeacher = () => {
   const [activeLink, setActiveLink] = useState('');
   const pathname = usePathname();
   const router = useRouter();
@@ -24,7 +23,7 @@ const SidebarAdmin = () => {
   return (
     <section className="bg-sidebar text-white z-[50] w-[0px] md:w-[96px] min-[1140px]:w-[270px] hover:w-[270px] hover:p-4 transition-all duration-300 py-4 min-[1140px]:p-4 hidden md:flex flex-col gap-y-4 items-center justify-between min-[1140px]:items-start fixed h-screen left-0 top-0 overflow-y-auto border-r border-gray-200 sidebar-scroll overflow-x-hidden group select-none">
       <Link
-        href="/"
+        href="/teachers-dashboard"
         className=" max-[1140px]:w-full group-hover:w-full h-[53px]"
       >
         <Image src="/sidebars/logo.svg" alt="Logo" width={212} height={40} />
@@ -44,9 +43,9 @@ const SidebarAdmin = () => {
             tabIndex={0}
             aria-label={link.label}
             className={cn(
-              'flex items-center gap-x-3 py-2 px-3 h-[52px] text-white font-medium text-base transition-colors duration-300 cursor-pointer ',
+              'flex items-center gap-x-3 py-2 h-[52px] text-sidebartext font-medium text-base transition-colors duration-300 cursor-pointer ',
               activeLink === link.link
-                ? 'bg-primary-light text-white rounded outline-none'
+                ? ' text-white rounded outline-none border-l-[8px] px-2'
                 : 'hover:bg-black/10 focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light'
             )}
             onClick={() => setActiveLink(link.link)}
@@ -91,4 +90,4 @@ const SidebarAdmin = () => {
   );
 };
 
-export default SidebarAdmin;
+export default SidebarTeacher;

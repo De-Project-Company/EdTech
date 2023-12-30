@@ -25,7 +25,8 @@ const config: Config = {
         success: '#008031',
         'success-hover': '#8acba3',
         error: '#FF0000',
-        active: '#EAEEF2'
+        active: '#EAEEF2',
+        sidebartext: "#B2B2B2"
       },
       fontFamily: {
         "font-helvetica": "var(--font-Helvetica)"

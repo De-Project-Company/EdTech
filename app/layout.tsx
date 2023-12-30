@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Work_Sans } from 'next/font/google';
 import { Helvetica } from '../fonts';
+import StateContextProvider from '../context/stateContext';
 import './styles/globals.scss';
 
 const workSans = Work_Sans({
@@ -23,9 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${workSans.className} ${Helvetica.variable}`}>
-        {children}
-      </body>
+      <StateContextProvider>
+        <body className={`${workSans.className} ${Helvetica.variable}`}>
+          {children}
+        </body>
+      </StateContextProvider>
     </html>
   );
 }
