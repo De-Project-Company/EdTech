@@ -26,6 +26,9 @@ const config: Config = {
         'success-hover': '#8acba3',
         error: '#FF0000',
         active: '#EAEEF2'
+      },
+      fontFamily: {
+        "font-helvetica": "var(--font-Helvetica)"
       }
     }
   },

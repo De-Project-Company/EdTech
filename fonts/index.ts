@@ -32,5 +32,6 @@ export const Helvetica = localFont({
       weight: '300',
       style: 'italic'
     }
-  ]
+  ],
+  variable: '--font-Helvetica'
 });
