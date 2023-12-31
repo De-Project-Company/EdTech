@@ -1,4 +1,5 @@
-// SearchContext.tsx
+'use client';
+
 import React, {
   createContext,
   useContext,

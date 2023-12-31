@@ -8,7 +8,7 @@ import React, {
   useMemo,
   useState
 } from 'react';
-
+import SwipeIndicator from '../components/sidebars/SwipIndicator';
 import { StateContextProps } from '../@types';
 
 export const StateContext = createContext({} as StateContextProps);

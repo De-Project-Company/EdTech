@@ -6,16 +6,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
 import { useStateCtx } from '../../context/stateContext';
-import { LogoutCurve, Setting2 } from 'iconsax-react';
+import { LogoutCurve } from 'iconsax-react';
 import { SIDEBAR_teachers_LINKS } from '../../libs/constants';
 import cn from '../../utils/twcx';
 import { useRouter } from 'next/navigation';
 
 const AdminMobileSidebar = () => {
-  const { teacherShowMobileMenu, setteacherShowMobileMenu, user } =
-    useStateCtx();
+  const { teacherShowMobileMenu, setteacherShowMobileMenu } = useStateCtx();
   const router = useRouter();
 
   const [activeLink, setActiveLink] = useState('');

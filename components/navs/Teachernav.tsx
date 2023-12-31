@@ -1,26 +1,35 @@
 'use client';
-import { Add, HambergerMenu, Notification, SearchNormal1 } from 'iconsax-react';
+import {
+  Add,
+  HambergerMenu,
+  Notification,
+  Message2,
+  SearchNormal1,
+  ArrowUp
+} from 'iconsax-react';
+import { useSearch } from '../../context/SearchContext';
 import { useStateCtx } from '../../context/stateContext';
-import { decryptString } from '../../utils';
 import cn from '../../utils/twcx';
 import TeacherMobileSidebar from '../sidebars/TeacherMobileSidebar';
-import { handleMouseEnter } from '../../utils/text-effect';
-import { useSearchParams } from 'next/navigation';
-import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import { useState } from 'react';
+import { Input } from '@ui/Input';
+import Button from '@ui/Button';
 
 const TeacherNavbar = () => {
-  const { currentPath, teacherShowMobileMenu, setteacherShowMobileMenu, user } =
+  const { teacherShowMobileMenu, setteacherShowMobileMenu, user } =
     useStateCtx();
-  const firstName = user.name?.split(' ')[0];
-  const searchParams = useSearchParams();
-  const projectTitle = searchParams.get('project_title');
-  const clientName = searchParams.get('client_name');
-  const decrptedTitle = decryptString(projectTitle ?? '');
-  const decrptedName = decryptString(clientName ?? '');
-  const settingTab = searchParams.get('setting_tab');
-  const pathName = currentPath.replace('admin-', '').replace('-', ' ');
-  const titleLen = 27;
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchVisible(prev => !prev);
+  };
+
+  const { searchValue, setSearchValue } = useSearch();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
 
   return (
     <header
@@ -56,73 +65,88 @@ const TeacherNavbar = () => {
             <HambergerMenu size={32} />
           )}
         </button>
-        {pathName === 'dashboard' ? (
-          <div className="flex gap-x-2 sm:gap-x-4 items-center">
-            <h2 className="hidden md:inline sm:text-3xl capitalize font-medium text-header  ">
-              Welcome back! {firstName ?? 'User'}
-            </h2>
-            <h2 className="max-[370px]:text-base max-[500px]:text-lg text-xl md:hidden capitalize font-medium text-header  ">
-              {pathName}
-            </h2>
-          </div>
-        ) : (
-          <div className="flex gap-x-2 sm:gap-x-4 items-center">
-            <h2
-              onMouseEnter={handleMouseEnter}
-              className="max-[370px]:text-base max-[500px]:text-lg text-xl sm:text-3xl capitalize font-medium text-header  "
-              data-value={
-                decrptedTitle
-                  ? pathName.replace('projects', 'project')
-                  : decrptedName
-                    ? pathName.replace('clients', 'client profile')
-                    : pathName
-              }
+        <div className="flex justify-between space-x-8 w-full items-center md:hidden">
+          <Input
+            type="text"
+            placeholder="Search..."
+            className="h-[60px] w-[450px]"
+            value={searchValue}
+            onChange={handleInputChange}
+          />
+          {user && (
+            <div className="flex items-center  gap-x-7 px-9  [&>button]:font-medium [&>button]:text-header">
+              <div className="flex items-center">
+                <div className="relative">
+                  <Message2 size={24} variant="Bold" />
+                  {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
+                {messageCount}
+              </span> */}
+                </div>
+              </div>
+              <div className="relative">
+                {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
+              {notificationCount}
+            </span> */}
+                <Notification size={24} />
+              </div>
+              <button
+                type="button"
+                className="w-8 h-8 border border-primary-light rounded-full"
+              >
+                <Image src={user.image!} alt="user" width={32} height={32} />
+              </button>
+            </div>
+          )}
+          <div className="flex gap-3 pl-9">
+            <Button
+              leftIcon={<ArrowUp />}
+              className="bg-white rounded-md text-primary"
+              intent={'secondary'}
             >
-              {decrptedTitle
-                ? pathName.replace('projects', 'project')
-                : decrptedName
-                  ? pathName.replace('clients', 'client profile')
-                  : pathName}
-            </h2>
-            {decrptedTitle && (
-              <div className="sm:flex items-center gap-x-2 hidden">
-                <span className="text-2xl sm:text-4xl text-gray-700">•</span>
-                <h3 className="max-[500px]:text-sm  sm:text-xl md:text-3xl capitalize min-[390px]:font-medium text-gray-700  ">
-                  {decrptedTitle.length > titleLen
-                    ? `${decrptedTitle.slice(0, titleLen)}...`
-                    : decrptedTitle}
-                </h3>
-              </div>
-            )}
-            {decrptedName && (
-              <div className="sm:flex items-center gap-x-2 hidden">
-                <span className="text-3xl sm:text-4xl text-gray-700">•</span>
-                <h3 className="max-[370px]:text-sm max-[500px]:text-base text-xl sm:text-3xl capitalize font-medium text-gray-700  ">
-                  {decrptedName}
-                </h3>
-              </div>
-            )}
-            {settingTab && (
-              <>
-                <span className="text-3xl sm:text-4xl text-gray-700 sm:hidden">
-                  <ChevronRight />
-                </span>
-                <span className="text-3xl sm:text-4xl text-gray-700 max-sm:hidden">
-                  •
-                </span>
-                <h3 className="max-[370px]:text-sm max-[500px]:text-base text-xl sm:text-3xl capitalize font-medium text-gray-700  ">
-                  {settingTab.replace(/-/g, ' ')}
-                </h3>
-              </>
-            )}
+              Upload
+            </Button>
+            <Button
+              leftIcon={<Add />}
+              className="rounded-md"
+              intent={'primary'}
+            >
+              Create
+            </Button>
           </div>
-        )}
+        </div>
       </div>
       {user && (
         <div className="flex items-center  md:hidden gap-x-3 xl:gap-x-5  [&>button]:font-medium [&>button]:text-header">
-          <button type="button">
+          <div className="flex items-center gap-2">
+            {isSearchVisible && (
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Search..."
+                  className="h-[40px]"
+                  value={searchValue}
+                  onChange={handleInputChange}
+                />
+              </div>
+            )}
+            <button type="button" onClick={toggleSearch}>
+              <SearchNormal1 size={24} />
+            </button>
+          </div>
+          <div className="flex items-center">
+            <div className="relative">
+              <Message2 size={24} variant="Bold" />
+              {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
+                {messageCount}
+              </span> */}
+            </div>
+          </div>
+          <div className="relative">
+            {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
+              {notificationCount}
+            </span> */}
             <Notification size={24} />
-          </button>
+          </div>
           <button
             type="button"
             className="w-8 h-8 border border-primary-light rounded-full"
