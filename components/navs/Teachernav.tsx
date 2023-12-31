@@ -7,6 +7,7 @@ import {
   SearchNormal1,
   ArrowUp
 } from 'iconsax-react';
+import Link from 'next/link';
 import { useSearch } from '../../context/SearchContext';
 import { useStateCtx } from '../../context/stateContext';
 import cn from '../../utils/twcx';
@@ -19,6 +20,7 @@ import Notifications from '../dropDowns/notification';
 
 const TeacherNavbar = () => {
   const notificationsRef = useRef<HTMLDivElement | null>(null);
+  const messagesRef = useRef<HTMLDivElement | null>(null);
   const [unreadNotifications, setUnreadNotifications] = useState(0);
   const [notificationMenu, setNotificationMenu] = useState(false);
   const { teacherShowMobileMenu, setteacherShowMobileMenu, user } =
@@ -106,13 +108,16 @@ const TeacherNavbar = () => {
           />
           {user && (
             <div className="flex items-center  gap-x-7 px-9  [&>button]:font-medium [&>button]:text-header">
-              <div className="flex items-center">
-                <button className="relative">
+              <div
+                className="w-fit flex h-fit relative cursor-pointer"
+                ref={messagesRef}
+              >
+                <Link className="relative" href="">
                   <Message2 size={24} variant="Bold" />
-                  {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
-                {messageCount}
-              </span> */}
-                </button>
+                </Link>
+                <span className="text-[#fff] text-[8px] font-bold  leading-3 tracking-tight w-3 h-3 px-1 absolute bg-red-600 rounded-[80px] flex-col justify-center items-center gap-2.5 inline-flex top-[-4px] left-[-2px]">
+                  {unreadNotifications}
+                </span>
               </div>
 
               <div
@@ -176,11 +181,16 @@ const TeacherNavbar = () => {
             </button>
           </div>
           <div className="flex items-center">
-            <div className="relative">
-              <Message2 size={24} variant="Bold" />
-              {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
-                {messageCount}
-              </span> */}
+            <div
+              className="w-fit flex h-fit relative cursor-pointer"
+              ref={messagesRef}
+            >
+              <Link className="relative" href="">
+                <Message2 size={24} variant="Bold" />
+              </Link>
+              <span className="text-[#fff] text-[8px] font-bold  leading-3 tracking-tight w-3 h-3 px-1 absolute bg-red-600 rounded-[80px] flex-col justify-center items-center gap-2.5 inline-flex top-[-4px] left-[-2px]">
+                {unreadNotifications}
+              </span>
             </div>
           </div>
           <div

@@ -18,7 +18,7 @@ export default function Home() {
           alt="background image"
           width="1132"
           height="1132"
-          className="h-screen absolute right-0"
+          className="h-full absolute right-0 top-1 animate-pulse"
         />
         <div className="px-[68px] z-10">
           <div className="flex h-full justify-center items-center pt-6 w-[1331px]">

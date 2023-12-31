@@ -4,6 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+.max-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .table-numbering {
+    @apply grid place-content-center bg-[#E8E8E8] rounded-full p-1 h-8 w-8;
+  }
+}
+
 // ======MISCELLANEOUS=========
 
 input[type='number']::-webkit-inner-spin-button,
