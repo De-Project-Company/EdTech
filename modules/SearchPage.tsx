@@ -41,7 +41,7 @@ const SearchResultsPage: React.FC = () => {
 
   const renderResults = () => {
     if (searchValue.trim() === '') {
-      return <p>No search query entered.</p>;
+      return;
     }
 
     const filteredResults = searchData.filter(item =>
@@ -49,7 +49,7 @@ const SearchResultsPage: React.FC = () => {
     );
 
     if (filteredResults.length === 0) {
-      return <p>No matching results found.</p>;
+      return <p>⚒️ NO Result ⚒️</p>;
     }
 
     return (

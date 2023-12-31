@@ -2,6 +2,7 @@ import SidebarTeacher from '../../components/sidebars/teachersSide';
 import TeacherNavbar from '../../components/navs/Teachernav';
 import { SearchProvider } from '../../context/SearchContext';
 import { NotificationProvider } from '../../context/NotificationContext';
+import SearchResultsPage from '@modules/SearchPage';
 
 export default function AdminLayout({
   children
@@ -16,6 +17,7 @@ export default function AdminLayout({
           <NotificationProvider>
             <TeacherNavbar />
             <div className="flex w-full flex-col h-full relative max-container pt-12 md:pt-0">
+              <SearchResultsPage />
               {children}
             </div>
           </NotificationProvider>

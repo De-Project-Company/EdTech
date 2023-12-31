@@ -1,12 +1,7 @@
 import React from 'react';
-import SearchResultsPage from '@modules/SearchPage';
 
 const Admins = () => {
-  return (
-    <div>
-      <SearchResultsPage />
-    </div>
-  );
+  return <div>Admin</div>;
 };
 
 export default Admins;

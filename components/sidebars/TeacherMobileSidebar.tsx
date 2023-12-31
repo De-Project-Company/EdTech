@@ -39,7 +39,7 @@ const AdminMobileSidebar = () => {
       />
       <section
         className={cn(
-          'py-6 md:hidden  min-[400px]:pl-4 pl-2 flex flex-col w-full max-w-[230px] min-[400px]:max-w-[270px]  items-start bg-white fixed left-0 top-0 z-[999] h-screen transition-all opacity-0 sidebar-scroll overflow-x-hidden group select-none ',
+          'py-6 md:hidden    min-[400px]:pl-4 pl-2 flex flex-col w-full max-w-[230px] min-[400px]:max-w-[270px]  items-start bg-sidebar fixed left-0 top-0 z-[999] h-screen transition-all opacity-0 sidebar-scroll overflow-x-hidden group select-none ',
           teacherShowMobileMenu
             ? 'translate-x-0 duration-700 opacity-100'
             : '-translate-x-full duration-300 pointer-events-none invisible'
@@ -68,10 +68,10 @@ const AdminMobileSidebar = () => {
               tabIndex={0}
               aria-label={link.label}
               className={cn(
-                'flex items-center gap-x-3 py-2 px-3 h-[42px] text-[#3a3a3a] font-medium text-sm transition-colors duration-300 cursor-pointer ',
+                'flex items-center gap-x-3 py-2 h-[42px] text-sidebartext font-medium text-sm transition-colors duration-300 cursor-pointer ',
                 activeLink === link.link
-                  ? 'bg-primary-light text-white rounded outline-none'
-                  : 'hover:bg-black/10 focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light'
+                  ? ' text-white rounded outline-none border-l-[8px] px-2'
+                  : 'hover:bg-primary-light hover:text-white focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light'
               )}
               onClick={() => {
                 setActiveLink(link.link);
@@ -81,7 +81,8 @@ const AdminMobileSidebar = () => {
               <link.icon
                 size={18}
                 aria-hidden
-                variant={activeLink === link.link ? 'Bold' : 'Outline'}
+                // variant={activeLink === link.link ? 'Bold' : 'Outline'}
+                variant={'Bold'}
               />
 
               <span className="w-[175px">{link.label}</span>

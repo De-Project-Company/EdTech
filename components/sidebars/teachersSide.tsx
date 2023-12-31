@@ -46,7 +46,7 @@ const SidebarTeacher = () => {
               'flex items-center gap-x-3 py-2 h-[52px] text-sidebartext font-medium text-base transition-colors duration-300 cursor-pointer ',
               activeLink === link.link
                 ? ' text-white rounded outline-none border-l-[8px] px-2'
-                : 'hover:bg-black/10 focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light'
+                : 'hover:bg-primary-light hover:text-white focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-light'
             )}
             onClick={() => setActiveLink(link.link)}
           >

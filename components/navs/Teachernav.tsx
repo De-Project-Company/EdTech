@@ -34,7 +34,7 @@ const TeacherNavbar = () => {
   return (
     <header
       className={cn(
-        'lg:px-9 px-3 border-b border-gray-200 h-[50px] sm:h-[70px] md:h-[89px] flex items-center justify-between fixed md:relative max-md:top-0 max-md:left-0 max-md:z-[99] select-none bg-white/80 backdrop-blur-lg w-full',
+        'lg:px-9 px-3 border-b h-[50px] sm:h-[70px] md:h-[89px] flex items-center justify-between fixed md:relative max-md:top-0 max-md:left-0 max-md:z-[99] select-none bg-white/80 backdrop-blur-lg w-full',
         {
           'md:overflow-hidden': teacherShowMobileMenu
         }
@@ -65,7 +65,7 @@ const TeacherNavbar = () => {
             <HambergerMenu size={32} />
           )}
         </button>
-        <div className="flex justify-between space-x-8 w-full items-center md:hidden">
+        <div className=" justify-between space-x-8 w-full items-center hidden md:flex">
           <Input
             type="text"
             placeholder="Search..."
@@ -76,19 +76,19 @@ const TeacherNavbar = () => {
           {user && (
             <div className="flex items-center  gap-x-7 px-9  [&>button]:font-medium [&>button]:text-header">
               <div className="flex items-center">
-                <div className="relative">
+                <button className="relative">
                   <Message2 size={24} variant="Bold" />
                   {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
                 {messageCount}
               </span> */}
-                </div>
+                </button>
               </div>
-              <div className="relative">
+              <button className="relative">
                 {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
               {notificationCount}
             </span> */}
                 <Notification size={24} />
-              </div>
+              </button>
               <button
                 type="button"
                 className="w-8 h-8 border border-primary-light rounded-full"
