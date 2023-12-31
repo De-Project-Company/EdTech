@@ -12,11 +12,15 @@ import { useStateCtx } from '../../context/stateContext';
 import cn from '../../utils/twcx';
 import TeacherMobileSidebar from '../sidebars/TeacherMobileSidebar';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Input } from '@ui/Input';
 import Button from '@ui/Button';
+import Notifications from '../dropDowns/notification';
 
 const TeacherNavbar = () => {
+  const notificationsRef = useRef<HTMLDivElement | null>(null);
+  const [unreadNotifications, setUnreadNotifications] = useState(0);
+  const [notificationMenu, setNotificationMenu] = useState(false);
   const { teacherShowMobileMenu, setteacherShowMobileMenu, user } =
     useStateCtx();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -30,6 +34,33 @@ const TeacherNavbar = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
+
+  const handleNotificationsToggle = () => {
+    setNotificationMenu(!notificationMenu);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      const targetNode = event.target as Node | null;
+
+      if (
+        notificationsRef.current &&
+        !notificationsRef.current.contains(targetNode)
+      ) {
+        setNotificationMenu(false);
+      }
+    }
+
+    if (notificationMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [notificationMenu]);
 
   return (
     <header
@@ -65,7 +96,7 @@ const TeacherNavbar = () => {
             <HambergerMenu size={32} />
           )}
         </button>
-        <div className=" justify-between space-x-8 w-full items-center hidden md:flex">
+        <div className=" justify-between space-x-8 w-full items-center hidden md:flex px-10">
           <Input
             type="text"
             placeholder="Search..."
@@ -83,12 +114,22 @@ const TeacherNavbar = () => {
               </span> */}
                 </button>
               </div>
-              <button className="relative">
-                {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
-              {notificationCount}
-            </span> */}
-                <Notification size={24} />
-              </button>
+
+              <div
+                className="w-fit flex h-fit relative cursor-pointer"
+                ref={notificationsRef}
+              >
+                <span className="text-[#fff] text-[8px] font-bold  leading-3 tracking-tight w-3 h-3 px-1 absolute bg-red-600 rounded-[80px] flex-col justify-center items-center gap-2.5 inline-flex top-[-4px] left-[-2px]">
+                  {unreadNotifications}
+                </span>
+
+                <button
+                  className="relative"
+                  onClick={handleNotificationsToggle}
+                >
+                  <Notification size={24} />
+                </button>
+              </div>
               <button
                 type="button"
                 className="w-8 h-8 border border-primary-light rounded-full"
@@ -97,6 +138,7 @@ const TeacherNavbar = () => {
               </button>
             </div>
           )}
+
           <div className="flex gap-3 pl-9">
             <Button
               leftIcon={<ArrowUp />}
@@ -141,11 +183,17 @@ const TeacherNavbar = () => {
               </span> */}
             </div>
           </div>
-          <div className="relative">
-            {/* <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1 text-xs">
-              {notificationCount}
-            </span> */}
-            <Notification size={24} />
+          <div
+            className="w-fit flex h-fit relative cursor-pointer"
+            ref={notificationsRef}
+          >
+            <span className="text-[#fff] text-[8px] font-bold  leading-3 tracking-tight w-3 h-3 px-1 absolute bg-red-600 rounded-[80px] flex-col justify-center items-center gap-2.5 inline-flex top-[-4px] left-[-2px]">
+              {unreadNotifications}
+            </span>
+
+            <button className="relative" onClick={handleNotificationsToggle}>
+              <Notification size={24} />
+            </button>
           </div>
           <button
             type="button"
@@ -156,6 +204,17 @@ const TeacherNavbar = () => {
         </div>
       )}
       <TeacherMobileSidebar />
+      {notificationMenu && (
+        <div
+          className="absolute bg-white-100 top-full w-fit md:2/4 lg:w-1/4  md:right-[50px] lg:right-[400px]"
+          ref={notificationsRef}
+        >
+          <Notifications
+            notificationsRef={notificationsRef}
+            unreadNotifications={setUnreadNotifications}
+          />
+        </div>
+      )}
     </header>
   );
 };

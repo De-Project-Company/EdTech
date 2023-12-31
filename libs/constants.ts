@@ -1,20 +1,16 @@
 import {
-  Category,
   type Icon,
   Medal,
   Receipt2,
   Keyboard,
-  People,
   Note1,
   Candle,
-  Personalcard,
-  Notification,
-  AddCircle,
   Rank,
   HomeHashtag
 } from 'iconsax-react';
 
-import { SidebarteachersProps } from '../@types';
+import { SidebarteachersProps, Notification } from '../@types';
+import { useState } from 'react';
 
 export const SIDEBAR_teachers_LINKS: SidebarteachersProps[] = [
   {

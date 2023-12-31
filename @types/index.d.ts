@@ -76,3 +76,15 @@ export interface StateContextProps {
 
   user: User;
 }
+
+export interface Notification {
+  id: number;
+  text: string;
+  read: boolean;
+  date: string;
+}
+
+export interface NotificationsProps {
+  unreadNotifications: (count: number) => void;
+  notificationsRef: React.RefObject<HTMLDivElement>;
+}
