@@ -130,41 +130,49 @@ For docker support 2 variable of docker files have been setted up
 ## using comand line
 
 ### For devlopment: 
-#### Image Creation
-    ```bash
+#### Image Creation:
+
+```bash
     docker build -f Dockerfile.dev -t (name of image:1.0 depending on the variant.) .
-    ```
-#### starting dev server
-    ```bash
+```
+#### starting dev server:
+
+```bash
     docker run --name (name of container as you wish) -d -p 3000:3000 (name of dockerimage:1.0 depending on the variant)
-    ```
-#### check
-    ```bash
+```
+#### check:
+
+```bash
     docker ps
-    ```
+```
 
 ### For production:
-#### Image Creation
-    ```bash
+
+#### Image Creation:
+
+```bash
     docker build -f Dockerfile.prod -t (name of image:1.0 depending on the variant.) .
-    ```
-#### starting dev server
-    ```bash
+```
+
+#### starting dev server:
+
+```bash
     docker run --name (name of container as you wish) -d -p 8080:8080 (name of dockerimage:1.0 depending on the variant)
-    ```
-#### check
-    ```bash
+```
+#### check:
+
+```bash
     docker ps
-    ```
+```
 
-## using docker compose file
+## using docker compose file:
 
-    ```bash
+```bash
     docker-compose up
-    ```
+```
 
-## running only a specfic service
+## running only a specfic service:
 
-    ```bash
+```bash
     docker-compose up client-prod/client-dev (depending on the service you want)
-    ```
+```
