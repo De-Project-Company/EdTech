@@ -11,6 +11,7 @@
 - [Contributing](#contributing)
 - [Merging](#merging)
 - [API](#api)
+- [DOCKER SUPPORT](#docker)
 
 
 # Description
@@ -118,3 +119,52 @@ A separate folder called `api` is created in the root dir  here, to make an **AP
 
 > ❗❗Do not create any custom http calls inside a components. Whatever calls that need to be processed by the server should be called within the file you created
 
+
+# DOCKER
+
+For docker support 2 variable of docker files have been setted up
+
+- Dockerfile.dev: for development support open port (3000)
+- Dockerfile.prod: for production open port (8080)
+
+## using comand line
+
+### For devlopment: 
+#### Image Creation
+    ```bash
+    docker build -f Dockerfile.dev -t (name of image:1.0 depending on the variant.) .
+    ```
+#### starting dev server
+    ```bash
+    docker run --name (name of container as you wish) -d -p 3000:3000 (name of dockerimage:1.0 depending on the variant)
+    ```
+#### check
+    ```bash
+    docker ps
+    ```
+
+### For production:
+#### Image Creation
+    ```bash
+    docker build -f Dockerfile.prod -t (name of image:1.0 depending on the variant.) .
+    ```
+#### starting dev server
+    ```bash
+    docker run --name (name of container as you wish) -d -p 8080:8080 (name of dockerimage:1.0 depending on the variant)
+    ```
+#### check
+    ```bash
+    docker ps
+    ```
+
+## using docker compose file
+
+    ```bash
+    docker-compose up
+    ```
+
+## running only a specfic service
+
+    ```bash
+    docker-compose up client-prod/client-dev (depending on the service you want)
+    ```

@@ -79,7 +79,7 @@ const SidebarTeacher = () => {
             }
           }}
           className={cn(
-            'flex group-hover:w-full min-[1140px]:w-full min-[1140px]:justify-start items-center gap-x-3 py-2 px-3 h-[52px] text-white font-medium text-base transition-colors duration-300 cursor-pointer hover:bg-black/10 focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500'
+            'flex group-hover:w-full min-[1140px]:w-full min-[1140px]:justify-start items-center gap-x-3 py-2  h-[52px] text-white font-medium text-base transition-colors duration-300 cursor-pointer hover:bg-primary-light focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500'
           )}
         >
           <ExportCircle size={24} aria-hidden variant={'Bold'} />
