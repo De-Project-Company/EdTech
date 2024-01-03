@@ -180,21 +180,25 @@
 
 import React from 'react';
 import { CircularProgress } from '@nextui-org/react';
+import LinearProgressBar from '../../../components/ProgressBar/LinearProgressBar';
 
 export default function App() {
   return (
     <>
-      <CircularProgress
-        classNames={{
-          svg: 'w-36 h-36 drop-shadow-md',
-          indicator: 'stroke-[#351A8D]',
-          track: 'stroke-[#D9D3EF]',
-          value: 'text-3xl font-semibold text-[#351A8D]'
-        }}
-        value={70}
-        strokeWidth={4}
-        showValueLabel={true}
-      />
+      <div className="flex items-center justify-center content-center">
+        <CircularProgress
+          classNames={{
+            svg: 'w-36 h-36 drop-shadow-md',
+            indicator: 'stroke-[#351A8D]',
+            track: 'stroke-[#D9D3EF]',
+            value: 'text-3xl font-semibold text-[#351A8D]'
+          }}
+          value={70}
+          strokeWidth={4}
+          showValueLabel={true}
+        />
+        <LinearProgressBar initialProgress={50} height={300} />
+      </div>
     </>
   );
 }

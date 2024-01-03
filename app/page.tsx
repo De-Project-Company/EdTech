@@ -34,7 +34,10 @@ export default function Home() {
                 the school community.
               </p>
               <div className="flex flex-col w-[283px]">
-                <Button className="bg-white px-16 py-4 rounded-lg text-primary text-16px font-normal mb-[20px] hover:bg-white">
+                <Button
+                  className="bg-white px-16 py-4 rounded-lg text-primary text-16px font-normal mb-[20px] hover:bg-white"
+                  href="/teachers-dashboard"
+                >
                   Get Started
                 </Button>
                 <span className="text-white">

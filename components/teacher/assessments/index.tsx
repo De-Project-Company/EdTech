@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Activity, ArchiveBook, BookSaved } from 'iconsax-react';
-import Greetings from './greeting';
+import Greetings from '../dashboard/greeting';
 import { CircularProgress } from '@nextui-org/react';
 
 const TopCard = () => {

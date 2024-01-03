@@ -10,6 +10,7 @@ import {
 import Link from 'next/link';
 import { useSearch } from '../../context/SearchContext';
 import { useStateCtx } from '../../context/stateContext';
+import useDisclosure from '../../hooks/useDisclosure';
 import cn from '../../utils/twcx';
 import TeacherMobileSidebar from '../sidebars/TeacherMobileSidebar';
 import Image from 'next/image';
@@ -17,6 +18,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Input } from '@ui/Input';
 import Button from '@ui/Button';
 import Notifications from '../dropDowns/notification';
+import UploadModal from '../modals/UploadModal';
 
 const TeacherNavbar = () => {
   const notificationsRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +28,7 @@ const TeacherNavbar = () => {
   const { teacherShowMobileMenu, setteacherShowMobileMenu, user } =
     useStateCtx();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const { isOpen, onClose, onOpen } = useDisclosure();
 
   const toggleSearch = () => {
     setIsSearchVisible(prev => !prev);
@@ -149,6 +152,7 @@ const TeacherNavbar = () => {
               leftIcon={<ArrowUp />}
               className="bg-white rounded-md text-primary"
               intent={'secondary'}
+              onClick={onOpen}
             >
               Upload
             </Button>
@@ -225,6 +229,7 @@ const TeacherNavbar = () => {
           />
         </div>
       )}
+      <UploadModal isOpen={isOpen} onClose={onClose} />
     </header>
   );
 };
