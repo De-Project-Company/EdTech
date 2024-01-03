@@ -45,7 +45,7 @@ function Modal({
             />
           </Transition.Child>
           <div className="fixed inset-0  overflow-y-auto sidebar-scroll">
-            <div className="flex min-h-full items-center md:items-center md:pt-14 justify-center p-4 text-center sidebar-scroll">
+            <div className="flex min-h-full items-center md:items-center md:pt-14 justify-center text-center sidebar-scroll">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -56,7 +56,7 @@ function Modal({
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className={`relative w-full ${sizes[size]} bg-white and p-4 font-nunito font-light transform overflow-hidden text-sm rounded-[12px] text-left align-middle shadow-xl transition-all`}
+                  className={`relative w-full ${sizes[size]} bg-white and font-nunito font-light transform overflow-hidden text-sm rounded-[12px] text-left align-middle shadow-xl transition-all`}
                 >
                   {title && (
                     <Dialog.Title

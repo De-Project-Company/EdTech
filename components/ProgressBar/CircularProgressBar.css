@@ -1,0 +1,38 @@
+/* CircularProgressBar.css */
+.circular-progress-bar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circular-progress-bar-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.circular-progress-bar-progress {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #3b82f6;
+}
+
+.circular-progress-bar-fill {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: #3b82f6;
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.circular-progress-bar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #3b82f6;
+}

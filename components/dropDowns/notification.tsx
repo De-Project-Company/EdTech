@@ -163,7 +163,7 @@ const Notifications: React.FC<NotificationsProps> = ({
 
   return (
     <div
-      className={`bg-[#fff] flex flex-col  w-fit h-[60vh] z-[20000] border-[#d8d8d8] rounded-lg shadow-xl ${
+      className={`bg-[#fff] flex flex-col  w-fit h-[60vh] z-[50] border-[#d8d8d8] rounded-lg shadow-xl ${
         loading ? '' : ''
       }`}
       ref={notificationsRef}
