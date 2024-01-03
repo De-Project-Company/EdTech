@@ -26,7 +26,8 @@ const config: Config = {
         'success-hover': '#8acba3',
         error: '#FF0000',
         active: '#EAEEF2',
-        sidebartext: "#B2B2B2"
+        sidebartext: "#B2B2B2",
+        student: "#28146A"
       },
       fontFamily: {
         "font-helvetica": "var(--font-Helvetica)"

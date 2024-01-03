@@ -25,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StateContextProvider>
-        <body className={`${workSans.className} ${Helvetica.variable}`}>
+        <body
+          className={`${workSans.className} ${Helvetica.variable}`}
+          suppressHydrationWarning={true}
+        >
           {children}
         </body>
       </StateContextProvider>
