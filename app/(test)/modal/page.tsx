@@ -1,58 +1,28 @@
-// 'use client';
-// import UploadModal from '../../../components/modals/UploadModal';
-// import ErrorModal from '../../../components/modals/ErrorModal';
-// import useDisclosure from '../../../hooks/useDisclosure';
-// import ProgressBar from '../../../components/ProgressBar';
+'use client';
+import UploadModal from '../../../components/modals/UploadModal';
+import ErrorModal from '../../../components/modals/ErrorModal';
+import useDisclosure from '../../../hooks/useDisclosure';
+import ProgressBar from '../../../components/ProgressBar';
+import {
+  card1,
+  card2,
+  card3,
+  card4,
+  card5,
+  card6
+} from '../../../libs/constants';
+import Card from '../../../components/cards/assessmentcard';
 // import { uploadImage, makeApiRequest } from '../../api/upload/route';
 // import RoundedProgressBar from '../../../components/ProgressBar/rounedProgressbar';
-// import Button from '@ui/Button';
+import Button from '@ui/Button';
 // import React, { useState } from 'react';
 // import axios from 'axios';
 
 // // // // function page() {
-// // // //   const { isOpen, onClose, onOpen } = useDisclosure();
-
-// // // //   const requestTime = 3000;
-// // // //   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-// // // //   const startLoading = () => {
-// // // //     setIsLoading(true);
-
-// // // //  const startLoading = () => {
-// // // //     setIsLoading(true);
-
-// // // //     // Simulate a demo API call
-// // // //     fetch('https://jsonplaceholder.typicode.com/todos/1')
-// // // //       .then((response) => response.json())
-// // // //       .then((data) => {
-// // // //         // Simulate a loading process
-// // // //         const startTime = Date.now();
-// // // //         const endTime = startTime + 3000; // Adjust the timeout duration as needed
-
-// // // //         const updateLoading = () => {
-// // // //           const currentTime = Date.now();
-// // // //           const progress = ((currentTime - startTime) / (endTime - startTime)) * 100;
-
-// // // //           if (progress < 100) {
-// // // //             requestAnimationFrame(updateLoading);
-// // // //           } else {
-// // // //             setIsLoading(false);
-// // // //           }
-// // // //         };
-
-// // // //         requestAnimationFrame(updateLoading);
-// // // //       })
-// // // //       .catch((error) => {
-// // // //         console.error('Error during API call:', error);
-// // // //         setIsLoading(false);
-// // // //       });
-// // // //   };
-
+//
 // // // //   return (
 // // // //     <div className="flex items-center justify-center">
-// // // //       <Button onClick={onOpen} size={'md'}>
-// // // //         Open Modal
-// // // //       </Button>
+
 // // // //       <UploadModal isOpen={isOpen} onClose={onClose} />
 
 // // // //       <button onClick={startLoading} disabled={isLoading}>
@@ -178,14 +148,53 @@
 
 // // export default page;
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CircularProgress } from '@nextui-org/react';
-import LinearProgressBar from '../../../components/ProgressBar/LinearProgressBar';
 
 export default function App() {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
+  const requestTime = 3000;
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const startLoading = () => {
+    setIsLoading(true);
+
+    const startLoading = () => {
+      setIsLoading(true);
+
+      // Simulate a demo API call
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(data => {
+          // Simulate a loading process
+          const startTime = Date.now();
+          const endTime = startTime + 3000; // Adjust the timeout duration as needed
+
+          const updateLoading = () => {
+            const currentTime = Date.now();
+            const progress =
+              ((currentTime - startTime) / (endTime - startTime)) * 100;
+
+            if (progress < 100) {
+              requestAnimationFrame(updateLoading);
+            } else {
+              setIsLoading(false);
+            }
+          };
+
+          requestAnimationFrame(updateLoading);
+        })
+        .catch(error => {
+          console.error('Error during API call:', error);
+          setIsLoading(false);
+        });
+    };
+  };
+
   return (
     <>
-      <div className="flex items-center justify-center content-center">
+      <div className="flex items-center justify-between content-center">
         <CircularProgress
           classNames={{
             svg: 'w-36 h-36 drop-shadow-md',
@@ -197,7 +206,22 @@ export default function App() {
           strokeWidth={4}
           showValueLabel={true}
         />
-        <LinearProgressBar initialProgress={50} height={300} />
+        <Button onClick={onOpen} size={'md'}>
+          Open Modal
+        </Button>
+        <button onClick={startLoading} disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Start Loading'}{' '}
+        </button>
+        <ProgressBar animate={isLoading} />
+      </div>
+      <ErrorModal isOpen={isOpen} onClose={onClose} />
+      <div className="bg-[#F2EFFF] py-[24px] px-[18px] rounded-[12px] mt-[24px] w-[940px] ">
+        <Card {...card1} />
+        <Card {...card2} />
+        <Card {...card3} />
+        <Card {...card4} />
+        <Card {...card5} />
+        <Card {...card6} />
       </div>
     </>
   );

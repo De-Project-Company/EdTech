@@ -1,35 +1,44 @@
+// SIDEBAR_STUDENT_LINKS
+
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { SIDEBAR_teachers_LINKS } from '../../libs/constants';
-import cn from '../../utils/twcx';
-import { ExportCircle } from 'iconsax-react';
+import { useEffect, useState } from 'react';
+import { SIDEBAR_STUDENT_LINKS } from '../../../libs/constants';
+import cn from '../../../utils/twcx';
+import { ExportCircle, LogoutCurve, Setting2 } from 'iconsax-react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-const SidebarTeacher = () => {
+// Mock-Data for user profile
+const user = {
+  name: 'Jane Doe',
+  email: 'JohnDoe@gmail.com',
+  image: '/facemoji.png'
+};
+
+const SidebarStudent = () => {
   const [activeLink, setActiveLink] = useState('');
-  const pathname = usePathname();
   const router = useRouter();
-
+  const pathname = usePathname();
   // remove the / from the pathname
-  useEffect(() => {
-    const currentPath = pathname?.replace(/^\/([^\/]+).*$/, '$1');
+  const currentPath = pathname?.replace('/', '');
 
-    setActiveLink(currentPath.trim());
-  }, [pathname]);
+  useEffect(() => {
+    setActiveLink(currentPath);
+  }, [currentPath]);
 
   return (
     <section className="bg-sidebar text-white z-[50] w-[0px] md:w-[96px] min-[1140px]:w-[270px] hover:w-[270px] hover:p-4 transition-all duration-300 py-4 min-[1140px]:p-4 hidden md:flex flex-col gap-y-4 items-center justify-between min-[1140px]:items-start fixed h-screen left-0 top-0 overflow-y-auto border-r border-gray-200 sidebar-scroll overflow-x-hidden group select-none">
       <Link
-        href="/teachers-dashboard"
+        href="/"
         className=" max-[1140px]:w-full group-hover:w-full h-[53px]"
       >
         <Image src="/sidebars/logo.svg" alt="Logo" width={212} height={40} />
       </Link>
       <ul className="flex flex-col gap-y-4 pt-8">
-        {SIDEBAR_teachers_LINKS.map(link => (
+        {SIDEBAR_STUDENT_LINKS.map(link => (
           <Link
             href={`/${link.link}`}
             aria-current={activeLink === link.link ? 'page' : undefined}
@@ -50,12 +59,7 @@ const SidebarTeacher = () => {
             )}
             onClick={() => setActiveLink(link.link)}
           >
-            <link.icon
-              size={30}
-              aria-hidden
-              //   variant={activeLink === link.link ? 'Bold' : 'Outline'}
-              variant={'Bold'}
-            />
+            <link.icon size={30} aria-hidden variant={'Bold'} />
 
             <span className=" max-[1139px]:hidden group-hover:block w-[185px]">
               {link.label}
@@ -79,15 +83,15 @@ const SidebarTeacher = () => {
             }
           }}
           className={cn(
-            'flex group-hover:w-full min-[1140px]:w-full min-[1140px]:justify-start items-center gap-x-3 py-2  h-[52px] text-white font-medium text-base transition-colors duration-300 cursor-pointer hover:bg-primary-light focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500'
+            'flex group-hover:w-full min-[1140px]:w-full min-[1140px]:justify-start items-center gap-x-3 py-2 px-3 h-[52px] text-[#e80000] font-medium text-base transition-colors duration-300 cursor-pointer hover:bg-black/10 focus-visible:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500'
           )}
         >
           <ExportCircle size={24} aria-hidden variant={'Bold'} />
-          <span className=" max-[1139px]:hidden group-hover:block">Logout</span>
+          <span className=" max-[1139px]:hidden group-hover:block">LogOut</span>
         </Link>
       </div>
     </section>
   );
 };
 
-export default SidebarTeacher;
+export default SidebarStudent;
