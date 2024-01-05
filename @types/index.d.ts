@@ -101,18 +101,10 @@ export interface SidebarProps {
   setSidebarOpen: (arg: boolean) => void;
 }
 
-export interface IRoute {
+export interface Event {
+  id: number;
   name: string;
-  layout: string;
-  icon: JSX.Element | string;
-  items?: any;
-  path: string;
-  secondary?: boolean | undefined;
-}
-interface RoutesType {
-  name: string;
-  layout: string;
-  icon: JSX.Element | string;
-  path: string;
-  secondary?: boolean | undefined;
+  imageUrl: string;
+  startDatetime: string;
+  endDatetime: string;
 }

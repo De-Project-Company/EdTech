@@ -12,6 +12,7 @@ import {
   card6
 } from '../../../libs/constants';
 import Card from '../../../components/cards/assessmentcard';
+import Calendar from '../../../components/calendar';
 // import { uploadImage, makeApiRequest } from '../../api/upload/route';
 // import RoundedProgressBar from '../../../components/ProgressBar/rounedProgressbar';
 import Button from '@ui/Button';
@@ -223,6 +224,7 @@ export default function App() {
         <Card {...card5} />
         <Card {...card6} />
       </div>
+      <Calendar />
     </>
   );
 }
