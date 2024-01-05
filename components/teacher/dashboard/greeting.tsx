@@ -12,7 +12,9 @@ const Greetings: React.FC<GreetingsProps> = ({ name }) => {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
 
-    if (currentHour >= 12 && currentHour < 18) {
+    if (currentHour >= 18) {
+      setGreeting(`Good Evening, ${name}`);
+    } else if (currentHour >= 12) {
       setGreeting(`Good Afternoon, ${name}`);
     } else {
       setGreeting(`Good Morning, ${name}`);
