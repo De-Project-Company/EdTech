@@ -110,7 +110,7 @@ export default function EventCalender(): JSX.Element {
               <button type="button" onClick={previousMonth} className=" p-1.5">
                 <ArrowLeft2 size="32" color="#111" />
               </button>
-              <h2 className="flex-auto font-semibold text-gray-900">
+              <h2 className="font-semibold text-black">
                 {format(firstDayCurrentMonth, 'MMMM yyyy')}
               </h2>
               <button onClick={nextMonth} type="button" className=" p-1.5 ">
