@@ -102,7 +102,7 @@ export const SIDEBAR_STUDENT_LINKS: SidebarteachersProps[] = [
     id: 6,
     label: 'Chats',
     icon: Message,
-    link: 'messages'
+    link: 'chat'
   },
   {
     id: 7,
