@@ -162,3 +162,93 @@ export const card6 = {
 
   buttonText: 'Click me'
 };
+
+export const StudentProgressTrackingData = [
+  {
+    name: 'Female',
+    data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 45],
+    color: '#FF7252'
+  },
+  {
+    name: 'Male',
+    data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 51],
+    color: '#4221B0'
+  }
+];
+
+export const StudentProgressTrackingOptions = {
+  legend: {
+    show: false,
+    position: 'top',
+    horizontalAlign: 'left'
+  },
+
+  chart: {
+    type: 'line',
+
+    toolbar: {
+      show: false
+    }
+  },
+
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+  },
+
+  // tooltip: {
+  //   style: {
+  //     fontSize: '12px',
+  //     fontFamily: undefined,
+  //     backgroundColor: '#000000'
+  //   },
+  //   x: {
+  //     format: 'dd/MM/yy HH:mm'
+  //   }
+  // },
+  grid: {
+    show: false
+  },
+  xaxis: {
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    labels: {
+      style: {
+        colors: '#A3AED0',
+        fontSize: '12px',
+        fontWeight: '500'
+      }
+    },
+    type: 'text',
+    range: undefined,
+    categories: [
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug'
+    ]
+  },
+  yaxis: {
+    title: {
+      style: {
+        fontSize: '0px'
+      }
+    },
+    min: 0,
+    max: 100
+  }
+};
