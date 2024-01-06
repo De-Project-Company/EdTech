@@ -16,19 +16,13 @@ const Card: React.FC<CardProps> = ({ icon: Icon, header, text, date }) => {
       className={`w-[900px] h-[124px] bg-[#FFFFFF] p-4 flex items-center justify-between rounded-md`}
     >
       <div className="flex items-center gap-3">
-        <div className="content-center bg-[#4221B0] w-[50px] h-[50px] rounded-full">
-          <Icon
-            size={35}
-            aria-hidden
-            variant="Bold"
-            className="hidden md:flex"
-            color='"FFFFFF'
-          />
+        <div className="content-center bg-[#4221B0] w-[50px]  h-[50px] rounded-full">
+          <Icon size={35} aria-hidden variant="Bold" color='"FFFFFF' />
         </div>
         <div className="w-[710px]">
           <h2 className="text-lg font-semibold">{header}</h2>
           <p className="mt-1">{text}</p>
-          <span>{date}</span>
+          <span className="text-[#8D0000]">Due Date: {date}</span>
         </div>
       </div>
       <Link
