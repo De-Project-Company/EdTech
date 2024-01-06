@@ -34,7 +34,10 @@
     "react-code-blocks": "^0.1.5",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
+    "react-toastify": "^9.1.3",
+    "recharts": "^2.10.3",
     "sass": "^1.69.5",
+    "sonner": "^1.3.1",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {

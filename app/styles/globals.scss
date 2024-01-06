@@ -56,3 +56,17 @@ input[type='number']::-webkit-outer-spin-button {
   color: white;
   background: #4221b0;
 }
+
+/* Auth Inputs Style */
+.auth-input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d4d2d2;
+  padding: 12px;
+  padding-left: 0;
+  transition: border-color 0.8s ease-in-out;
+}
+
+.auth-input:focus {
+  border-color: #4832d5;
+}

@@ -121,46 +121,42 @@ export const card1 = {
   icon: ArchiveBook,
   header: 'Course A',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-  subtext: 'Subtext goes here.',
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const card2 = {
   icon: ArchiveBook,
   header: 'Angular Card',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-  subtext: 'Subtext goes here.',
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const card3 = {
   icon: ArchiveBook,
   header: 'Vue.js Card',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const card4 = {
   icon: ArchiveBook,
   header: 'HTML5 Card',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const card5 = {
   icon: ArchiveBook,
   header: 'CSS3 Card',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const card6 = {
   icon: ArchiveBook,
   header: 'JavaScript Card',
   text: 'Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique Lorem ipsum dolor sit amet consectetur. Molestie tristique ',
-
-  buttonText: 'Click me'
+  date: '12/12/24'
 };
 
 export const StudentProgressTrackingData = [

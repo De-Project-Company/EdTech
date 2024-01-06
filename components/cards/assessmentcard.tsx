@@ -7,9 +7,10 @@ interface CardProps {
   icon: Icon;
   header: string;
   text: string;
+  date: string;
 }
 
-const Card: React.FC<CardProps> = ({ icon: Icon, header, text }) => {
+const Card: React.FC<CardProps> = ({ icon: Icon, header, text, date }) => {
   return (
     <div
       className={`w-[900px] h-[124px] bg-[#FFFFFF] p-4 flex items-center justify-between rounded-md`}
@@ -27,6 +28,7 @@ const Card: React.FC<CardProps> = ({ icon: Icon, header, text }) => {
         <div className="w-[710px]">
           <h2 className="text-lg font-semibold">{header}</h2>
           <p className="mt-1">{text}</p>
+          <span>{date}</span>
         </div>
       </div>
       <Link

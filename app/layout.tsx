@@ -3,6 +3,8 @@ import { Work_Sans } from 'next/font/google';
 import { Helvetica } from '../fonts';
 import StateContextProvider from '../context/stateContext';
 import './styles/globals.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -29,6 +31,18 @@ export default function RootLayout({
           className={`${workSans.className} ${Helvetica.variable}`}
           suppressHydrationWarning={true}
         >
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           {children}
         </body>
       </StateContextProvider>
