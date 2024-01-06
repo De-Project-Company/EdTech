@@ -13,7 +13,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ icon: Icon, header, text, date }) => {
   return (
     <div
-      className={`w-[900px] h-[124px] bg-[#FFFFFF] p-4 flex items-center justify-between rounded-md`}
+      className={`w-[900px] h-[140px] bg-[#FFFFFF] p-4 flex items-center justify-between rounded-md`}
     >
       <div className="flex items-center gap-3">
         <div className="content-center bg-[#4221B0] w-[50px]  h-[50px] rounded-full">

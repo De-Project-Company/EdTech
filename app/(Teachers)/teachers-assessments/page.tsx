@@ -6,11 +6,9 @@ import Upcoming from '../../../components/teacher/assessments/upcoming';
 import Ongoing from '../../../components/teacher/assessments/ongoing';
 
 const Assessments = () => {
-  const [activeTab, setActiveTab] = useState<'upcoming' | 'ongoing'>(
-    'upcoming'
-  ); // Updated state value
+  const [activeTab, setActiveTab] = useState<'ongoing' | 'upcoming'>('ongoing');
 
-  const handleTabClick = (tab: 'upcoming' | 'ongoing') => {
+  const handleTabClick = (tab: 'ongoing' | 'upcoming') => {
     setActiveTab(tab);
   };
   return (
