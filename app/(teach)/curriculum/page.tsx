@@ -5,11 +5,13 @@ import Button from '@ui/Button';
 import { toast } from 'react-toastify';
 import Page1 from '../../../components/teacher/Curriculum/page1';
 import Page2 from '../../../components/teacher/Curriculum/page2';
+import SucessModal from '../../../components/modals/sucessModal';
 import { useCurriculumCreationctx } from '../../../context/CurriculumCtx';
 
 const Page: React.FC = () => {
   const { registrationData, create } = useCurriculumCreationctx();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNextClick = () => {
     setCurrentStep(currentStep === 1 ? 2 : 1);
@@ -22,7 +24,12 @@ const Page: React.FC = () => {
   const handleRegisterClick = () => {
     // Handle registration logic
     create();
+    setIsModalOpen(true);
     // toast.success('Form submitted successfully!');
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
   return (
     <>
@@ -56,6 +63,7 @@ const Page: React.FC = () => {
           )}
         </div>
       </div>
+      <SucessModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 };

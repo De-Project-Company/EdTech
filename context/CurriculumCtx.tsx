@@ -46,6 +46,7 @@ export const CurriculumCreationProvider: React.FC<
     //logic for creation
     // console.log('Registration data:', registrationData);
     toast.success('Registration successful!');
+
     // Reset the form data after registration
     setRegistrationData({
       courseTitle: '',

@@ -160,6 +160,7 @@ const TeacherNavbar = () => {
               leftIcon={<Add />}
               className="rounded-md"
               intent={'primary'}
+              href="/curriculum"
             >
               Create
             </Button>
