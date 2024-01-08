@@ -79,7 +79,7 @@ const Signin = () => {
       </div>
 
       <div className="w-[1400px] h-[600px] bg-white relative z-10 flex items-center justify-center rounded-xl overflow-hidden">
-        <div className="w-1/2 h-full flex items-center justify-center hidden md:flex">
+        <div className="w-1/2 h-full  items-center justify-center hidden md:flex">
           <p className="text-4xl text-black">Left Section</p>
         </div>
 
@@ -118,7 +118,7 @@ const Signin = () => {
                   <div className=" flex flex-col gap-2">
                     <label
                       htmlFor="password"
-                      className="text-black font-semibold leading-7 mt-2 font-medium"
+                      className="text-black  leading-7 mt-2 font-medium"
                     >
                       Password
                     </label>

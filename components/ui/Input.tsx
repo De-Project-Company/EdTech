@@ -7,7 +7,7 @@ import React, {
 import { twMerge } from 'tailwind-merge';
 
 const inputVariants = cva(
-  'relative px-4 py-3 flex items-center justify-center gap-3 w-fit h-[48px] rounded-[10px] font-manropeL text-dark-100 hide-caret transition-all select-none focus-within:border-primary-light ',
+  'relative px-4 py-3 flex items-center justify-center gap-3 w-fit h-[48px] rounded-[10px] text-dark-100 hide-caret transition-all select-none focus-within:border-primary-light ',
   {
     variants: {
       intent: {
