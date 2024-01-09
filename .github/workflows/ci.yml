@@ -32,8 +32,8 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Pull to main branch if build passes
-        if: success()
-        run: |
-            git switch 'main'
-            git pull origin dev
+      # - name: Pull to main branch if build passes
+      #   if: success()
+      #   run: |
+      #       git switch 'main'
+      #       git pull origin dev
