@@ -35,5 +35,5 @@ jobs:
       - name: Pull to main branch if build passes
         if: success()
         run: |
-            git checkout main
+            git switch main
             git pull origin dev
