@@ -108,3 +108,11 @@ export interface Event {
   startDatetime: string;
   endDatetime: string;
 }
+
+export type StudentProps = {
+  id?: number;
+  name: string;
+  grades: number;
+  email: string;
+  status: 'Active' | 'Inactive' | 'Probation';
+};

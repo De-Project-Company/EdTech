@@ -151,6 +151,7 @@ import Button from '@ui/Button';
 
 import React, { useState } from 'react';
 import { CircularProgress } from '@nextui-org/react';
+import Content from '@modules/teachers/content';
 
 export default function App() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -195,36 +196,39 @@ export default function App() {
 
   return (
     <>
-      <div className="flex items-center justify-between content-center">
-        <CircularProgress
-          classNames={{
-            svg: 'w-36 h-36 drop-shadow-md',
-            indicator: 'stroke-[#351A8D]',
-            track: 'stroke-[#D9D3EF]',
-            value: 'text-3xl font-semibold text-[#351A8D]'
-          }}
-          value={70}
-          strokeWidth={4}
-          showValueLabel={true}
-        />
-        <Button onClick={onOpen} size={'md'}>
-          Open Modal
-        </Button>
-        <button onClick={startLoading} disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Start Loading'}{' '}
-        </button>
-        <ProgressBar animate={isLoading} />
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex items-center justify-between content-center">
+          <CircularProgress
+            classNames={{
+              svg: 'w-36 h-36 drop-shadow-md',
+              indicator: 'stroke-[#351A8D]',
+              track: 'stroke-[#D9D3EF]',
+              value: 'text-3xl font-semibold text-[#351A8D]'
+            }}
+            value={70}
+            strokeWidth={4}
+            showValueLabel={true}
+          />
+          <Button onClick={onOpen} size={'md'}>
+            Open Modal
+          </Button>
+          <button onClick={startLoading} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Start Loading'}{' '}
+          </button>
+          <ProgressBar animate={isLoading} />
+        </div>
+        <ErrorModal isOpen={isOpen} onClose={onClose} />
+        <div className="bg-[#F2EFFF] py-[24px] px-[18px] rounded-[12px] mt-[24px] w-[940px] ">
+          <Card {...card1} />
+          <Card {...card2} />
+          <Card {...card3} />
+          <Card {...card4} />
+          <Card {...card5} />
+          <Card {...card6} />
+        </div>
+        <Calendar />
+        <Content />
       </div>
-      <ErrorModal isOpen={isOpen} onClose={onClose} />
-      <div className="bg-[#F2EFFF] py-[24px] px-[18px] rounded-[12px] mt-[24px] w-[940px] ">
-        <Card {...card1} />
-        <Card {...card2} />
-        <Card {...card3} />
-        <Card {...card4} />
-        <Card {...card5} />
-        <Card {...card6} />
-      </div>
-      <Calendar />
     </>
   );
 }

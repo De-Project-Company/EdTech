@@ -2,6 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ArrowDown2 } from 'iconsax-react';
 import { TickCircle } from 'iconsax-react';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 
 const Select = SelectPrimitive.Root;
@@ -35,7 +36,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      {rightIcon ? rightIcon : <ArrowDown2 color="#7777" />}
+      {rightIcon ? rightIcon : <ChevronDown className="h-4 w-4" />}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
@@ -97,7 +98,7 @@ const SelectItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <TickCircle size="32" color="#555555" variant="Broken" />
+        <Check className="h-4 w-4" />
       </SelectPrimitive.ItemIndicator>
     </span>
 

@@ -101,7 +101,7 @@ export default function EventCalender(): JSX.Element {
   );
 
   return (
-    <div className="pt-16">
+    <div className="max-w-[380px] max-h-[432px]">
       <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
         {' '}
         <div className="md:grid md:divide-y w-[450px] gap-y-5 md:divide-gray-200">
