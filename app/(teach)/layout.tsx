@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { CurriculumCreationProvider } from '../../context/CurriculumCtx';
+import React from 'react';
+import { CreationProvider } from '../../context/CreationCtx';
 import PLainNav from '../../components/navs/plain';
 
 export default function StudentLayout({
@@ -11,12 +11,12 @@ export default function StudentLayout({
 }) {
   return (
     <>
-      <CurriculumCreationProvider>
+      <CreationProvider>
         <PLainNav />
         <section className="w-full relative items-center justify-center content-center">
           {children}
         </section>
-      </CurriculumCreationProvider>
+      </CreationProvider>
     </>
   );
 }
