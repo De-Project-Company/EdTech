@@ -3,16 +3,17 @@
 import React from 'react';
 import { Input } from '@ui/Input';
 import Image from 'next/image';
-import { useCurriculumCreationctx } from '../../../context/CurriculumCtx';
+import { useCreationCtx } from '../../../context/CreationCtx';
 
 const Page2: React.FC = () => {
-  const { registrationData, setRegistrationData } = useCurriculumCreationctx();
+  const { CurriculumCreationData, setCurriculumCreationData } =
+    useCreationCtx();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setRegistrationData(prevData => ({ ...prevData, [name]: value }));
+    setCurriculumCreationData(prevData => ({ ...prevData, [name]: value }));
   };
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -31,7 +32,7 @@ const Page2: React.FC = () => {
             <Input
               type="text"
               name="courseTitle"
-              value={registrationData.courseTitle}
+              value={CurriculumCreationData.courseTitle}
               placeHolder="course tittle"
               onChange={handleChange}
               className="w-full"
@@ -44,7 +45,7 @@ const Page2: React.FC = () => {
             <Input
               type="text"
               name="courseOverview"
-              value={registrationData.courseOverview}
+              value={CurriculumCreationData.courseOverview}
               onChange={handleChange}
               placeHolder="course overview"
               className="w-full"
@@ -57,7 +58,7 @@ const Page2: React.FC = () => {
             </label>
             <textarea
               name="learningObjective"
-              value={registrationData.learningObjective}
+              value={CurriculumCreationData.learningObjective}
               onChange={handleChange}
               placeholder="Learning objective"
               className="active:border-primary focus-within:border-primary border-2 p-2 rounded-lg h-[200px] resize-none"

@@ -6,10 +6,10 @@ import { toast } from 'react-toastify';
 import Page1 from '../../../components/teacher/Curriculum/page1';
 import Page2 from '../../../components/teacher/Curriculum/page2';
 import SucessModal from '../../../components/modals/sucessModal';
-import { useCurriculumCreationctx } from '../../../context/CurriculumCtx';
+import { useCreationCtx } from '../../../context/CreationCtx';
 
 const Page: React.FC = () => {
-  const { registrationData, create } = useCurriculumCreationctx();
+  const { CurriculumCreationData, CreateCurriculum } = useCreationCtx();
   const [currentStep, setCurrentStep] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,7 +23,7 @@ const Page: React.FC = () => {
 
   const handleRegisterClick = () => {
     // Handle registration logic
-    create();
+    CreateCurriculum();
     setIsModalOpen(true);
     // toast.success('Form submitted successfully!');
   };
@@ -34,7 +34,7 @@ const Page: React.FC = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center ">
-        <div className="flex flex-col items-center justify-center w-[681px] h-[677px]">
+        <div className="flex flex-col items-center justify-center w-[681px] h-full">
           {currentStep === 1 ? <Page1 /> : <Page2 />}
           {currentStep === 1 && (
             <Button
@@ -44,17 +44,17 @@ const Page: React.FC = () => {
               Next
             </Button>
           )}
-          {/* <pre>{JSON.stringify(registrationData, null, 2)}</pre> */}
+
           {currentStep === 2 && (
-            <div className="flex items-center justify-between space-x-2 mb-5">
+            <div className="flex items-center justify-between space-x-2 mb-5 ">
               <Button
-                className="mt-[100px] w-[195px] h-[56px] text-primary bg-white border-primary border hover:bg-primary hover:text-white"
+                className="w-[195px] h-[56px] text-primary bg-white border-primary border hover:bg-primary hover:text-white"
                 onClick={handleBackClick}
               >
                 Back
               </Button>
               <Button
-                className="mt-[100px] w-[442px] h-[52px]"
+                className="w-[442px] h-[52px]"
                 onClick={handleRegisterClick}
               >
                 Register
