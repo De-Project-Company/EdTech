@@ -62,6 +62,21 @@ export const CreationProvider: React.FC<CreationProvider> = ({ children }) => {
     });
 
   const CreateAssessments = () => {
+    if (
+      AssessmentsCreationData.Tittle === '' ||
+      AssessmentsCreationData.Assessmenttype === '' ||
+      AssessmentsCreationData.description === '' ||
+      AssessmentsCreationData.dueDate === '' ||
+      AssessmentsCreationData.maxpoint === 0 ||
+      AssessmentsCreationData.CriterionName === '' ||
+      AssessmentsCreationData.GradingGuidline === '' ||
+      AssessmentsCreationData.PointValue === '' ||
+      AssessmentsCreationData.ScoringScale === '' ||
+      AssessmentsCreationData.Publiclink === ''
+    ) {
+      toast.error('Please fill in all required fields');
+      return; // Stop execution if any field is empty
+    }
     //logic for creation
     // console.log('Creation data:', CurriculumCreationData);
     toast.success('Creation successful!');
