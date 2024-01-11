@@ -7,9 +7,9 @@ export default function SettingLayout({
 }) {
   return (
     <>
-      <section className="flex flex-row  w-full h-full ">
+      <section className="flex">
         <ChatnSidebar />
-        <div className="pl-[90px]">{children}</div>
+        <div className="pl-[90px] flex flex-col">{children}</div>
       </section>
     </>
   );
