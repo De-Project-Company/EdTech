@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./"],
       "@ui/*": ["./components/ui/*"],
-      "@modules/*": ["./modules/*"]
+      "@modules/*": ["./modules/*"],
+      "@components/*": ["./components/*"],
     },
     "forceConsistentCasingInFileNames": true
   },

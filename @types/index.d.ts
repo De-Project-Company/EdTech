@@ -116,3 +116,18 @@ export type StudentProps = {
   email: string;
   status: 'Active' | 'Inactive' | 'Probation';
 };
+
+export type ChatSidebarProps = {
+  id?: number;
+  name: string;
+  path: string;
+  icon: Icon;
+};
+
+interface MessageCardProps {
+  id?: number;
+  imageUrl: string;
+  name: string;
+  content: string;
+  hasMessage?: boolean;
+}

@@ -12,10 +12,22 @@ import {
   Rank,
   HomeHashtag,
   Notepad,
-  ArchiveBook
+  ArchiveBook,
+  Messages,
+  Messages2,
+  User,
+  Book1,
+  Folder2,
+  Setting
 } from 'iconsax-react';
+import Girl from '../public/messages/girl.svg';
+import Boy from '../public/messages/boy.svg';
 
-import { SidebarteachersProps, Notification } from '../@types';
+import {
+  SidebarteachersProps,
+  Notification,
+  ChatSidebarProps
+} from '../@types';
 import { useState } from 'react';
 
 export const SIDEBAR_teachers_LINKS: SidebarteachersProps[] = [
@@ -248,3 +260,192 @@ export const StudentProgressTrackingOptions = {
     max: 100
   }
 };
+
+export const Chatnav: ChatSidebarProps[] = [
+  {
+    id: 1,
+    name: 'Messages',
+    path: '/messages',
+    icon: Messages2
+  },
+  {
+    id: 2,
+    name: 'Friends',
+    path: '/friends',
+    icon: User
+  },
+  {
+    id: 3,
+    name: 'Files',
+    path: '/archive',
+    icon: Folder2
+  }
+  // {
+  //   id: 4,
+  //   name: 'Profile Settings',
+  //   path: '/workspace',
+  //   icon: Setting
+  // }
+];
+
+// cardConstants.ts
+export const MessageData = [
+  {
+    id: 1,
+    imageUrl: Boy,
+    name: 'Jackson Jackson',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    hasMessage: true
+  },
+  {
+    id: 2,
+    imageUrl: Girl,
+    name: 'Omotola',
+    content:
+      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    hasMessage: false
+  },
+  {
+    id: 3,
+    imageUrl: Boy,
+    name: 'Bukky',
+    content:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    hasMessage: true
+  },
+  {
+    id: 4,
+    imageUrl: Girl,
+    name: 'Gift Emi',
+    content:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    hasMessage: false
+  },
+  {
+    id: 5,
+    imageUrl: Boy,
+    name: 'Gift Obafaiye',
+    content:
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    hasMessage: true
+  },
+  {
+    id: 6,
+    imageUrl: Girl,
+    name: 'Ojuolape',
+    content:
+      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+    hasMessage: false
+  },
+  {
+    id: 7,
+    imageUrl: Boy,
+    name: 'Sophia Anderson',
+    content:
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+    hasMessage: true
+  },
+  {
+    id: 8,
+    imageUrl: Girl,
+    name: 'Oliver White',
+    content:
+      '...sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
+    hasMessage: false
+  },
+  {
+    id: 9,
+    imageUrl: Boy,
+    name: 'Ella Johnson',
+    content:
+      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...',
+    hasMessage: true
+  },
+  {
+    id: 10,
+    imageUrl: Girl,
+    name: 'Henry Brown',
+    content:
+      '...nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+    hasMessage: false
+  },
+  {
+    id: 11,
+    imageUrl: Boy,
+    name: 'Liam Johnson',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    hasMessage: true
+  },
+  {
+    id: 12,
+    imageUrl: Girl,
+    name: 'Ava Williams',
+    content:
+      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    hasMessage: false
+  },
+  {
+    id: 13,
+    imageUrl: Boy,
+    name: 'Mia Davis',
+    content:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    hasMessage: true
+  },
+  {
+    id: 14,
+    imageUrl: Girl,
+    name: 'Noah Wilson',
+    content:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    hasMessage: false
+  },
+  {
+    id: 15,
+    imageUrl: Boy,
+    name: 'Sophie Thomas',
+    content:
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    hasMessage: true
+  },
+  {
+    id: 16,
+    imageUrl: Girl,
+    name: 'Ethan Moore',
+    content:
+      'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+    hasMessage: false
+  },
+  {
+    id: 17,
+    imageUrl: Boy,
+    name: 'Chloe Brown',
+    content:
+      'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+    hasMessage: true
+  },
+  {
+    id: 18,
+    imageUrl: Girl,
+    name: 'Jackson White',
+    content:
+      '...sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
+    hasMessage: false
+  },
+  {
+    id: 19,
+    imageUrl: Boy,
+    name: 'Aria Johnson',
+    content:
+      'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...',
+    hasMessage: true
+  },
+  {
+    id: 20,
+    imageUrl: Girl,
+    name: 'Lucas Brown',
+    content:
+      '...nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
+    hasMessage: false
+  }
+];
