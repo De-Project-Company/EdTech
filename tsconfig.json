@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./"],
+      "@/*": ["./*"],
+      "@utils/*":["./utils/*"],
       "@ui/*": ["./components/ui/*"],
       "@modules/*": ["./modules/*"],
       "@components/*": ["./components/*"],
