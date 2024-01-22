@@ -19,12 +19,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./"],
+      "@/*": ["./*"],
+      "@utils/*":["./utils/*"],
       "@ui/*": ["./components/ui/*"],
       "@modules/*": ["./modules/*"],
       "@components/*": ["./components/*"],
     },
-    "forceConsistentCasingInFileNames": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
