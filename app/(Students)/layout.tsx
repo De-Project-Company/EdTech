@@ -1,8 +1,8 @@
 'use client';
-
-import React, { useState } from 'react';
+import { Suspense } from 'react';
 import SidebarStudent from '../../components/sidebars/student/sidebar';
 import StuedntNavbar from '../../components/navs/StudentNav';
+import SkeletonNavbar from '@components/skeleton/SkeletonNavbar';
 
 export default function StudentLayout({
   children
@@ -13,7 +13,9 @@ export default function StudentLayout({
     <>
       <SidebarStudent />
       <section className="w-full relative  md:pl-[96px] min-[1140px]:pl-[270px]">
-        <StuedntNavbar />
+        <Suspense fallback={<SkeletonNavbar />}>
+          <StuedntNavbar />
+        </Suspense>
         <div className="flex w-full flex-col h-full relative max-container pt-12 md:pt-0">
           {children}
         </div>
