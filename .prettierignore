@@ -47,9 +47,9 @@ next-env.d.ts
 postcss.config.js
 .eslintrc.json
 .prettierrc
-next.config.js
 package-lock.json
 postcss.config.js
 README.md
 tailwind.config.ts
 tsconfig.json
+next.config.mjs

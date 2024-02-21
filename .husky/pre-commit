@@ -5,8 +5,13 @@ echo '🏗️👷 Running checks on your code before committing' 🔍🧐
 
 echo "styling your work" 🎨✨
 
-# Styling Prettier standards
-npm run format
+# Check Prettier standards
+npm run check-format ||
+(
+    echo '🤢🤮🤢🤮 Its so ugly!! - Your styling looks disgusting. 🤢🤮🤢🤮
+            Prettier Check Failed. Run npm run format, add changes and try commit again.';
+    false;
+)
 
 
 echo '🏗️👷 checking for eslint errors' 🔍🧐
