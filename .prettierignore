@@ -50,6 +50,6 @@ postcss.config.js
 package-lock.json
 postcss.config.js
 README.md
-# tailwind.config.ts
+tailwind.config.ts
 tsconfig.json
 next.config.mjs
