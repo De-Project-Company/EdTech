@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import avatar from '@/public/cta2.png';
 import ReviewCard from '../ReviewCard';
 
 export default function Reviews() {
