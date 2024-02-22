@@ -9,9 +9,27 @@ export default function Cta() {
       <div className="w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-6">
         <div className="w-full md:w-6/12">
           <div className="columns-1 md:columns-2 [&>img:not(:first-child)]:mt-5 md:[&>img:not(first-child)]:mt-8">
-            <Image src={ctaOne} alt="" className="" />
-            <Image src={ctaTwo} alt="" className="hidden md:block" />
-            <Image src={ctaThr} alt="" className="hidden md:block" />
+            <Image
+              src="/cta1.png"
+              height={341}
+              width={333}
+              alt=""
+              className=""
+            />
+            <Image
+              src="/cta2.png"
+              height={255}
+              width={260}
+              alt=""
+              className="hidden md:block"
+            />
+            <Image
+              src="/cta3.png"
+              height={322}
+              width={648}
+              alt=""
+              className="hidden md:block"
+            />
           </div>
         </div>
         <div className="w-full md:w-5/12 flex items-center">
