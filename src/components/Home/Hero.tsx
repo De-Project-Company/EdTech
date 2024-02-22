@@ -36,7 +36,9 @@ export default function Hero() {
         <div className="w-full md:w-6/12 hero-banner h-full">
           <div className="w-full h-full flex justify-center relative">
             <Image
-              src={frameThr}
+              src="/framer3.png"
+width="40"
+height="50"
               className="h-full w-10/12 object-cover object-top"
               alt=""
             />
