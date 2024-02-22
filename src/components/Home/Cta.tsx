@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import ctaOne from '@/public/cta1.png';
-import ctaTwo from '@/public/cta2.png';
-import ctaThr from '@/public/cta3.png';
 
 export default function Cta() {
   return (
