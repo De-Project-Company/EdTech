@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import searchIcon from '@/public/search.png';
+// import searchIcon from '@/public/';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -48,15 +48,14 @@ export default function Navbar() {
         {/* Button Tabs */}
         <div className="hidden md:flex gap-2 items-center">
           <button className="p-3 bg-[#D9D3EF] text-white rounded-md">
-            <Image src={searchIcon} alt="" className="h-4 w-4" />
+            <Image src="/search.png" height="40" width="40" alt="" className="h-4 w-4" />
           </button>
           <button className="py-2 px-6 bg-[#4221B0] text-white rounded-md">
             Register
           </button>
         </div>
         <div className="md:hidden flex gap-2 items-center">
-          <button className="p-3 bg-[#D9D3EF] text-white rounded-md">
-            <Image src={searchIcon} alt="" className="h-4 w-4" />
+          <button className="p-3 bg-[#D9D3EF] text-white rounded-md"> <Image src="/search.png" height="40" width="40" alt="" className="h-4 w-4" />
           </button>
           <button
             onClick={toggleMenu}
