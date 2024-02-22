@@ -36,3 +36,12 @@ input[type='number']::-webkit-outer-spin-button {
   color: white;
   background: #4221b0;
 }
+
+// hero banner
+
+.hero-banner {
+  background-image: url('../public/hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}

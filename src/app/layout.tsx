@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import '../styles/globals.scss';
 import { Helvetica, poppins } from '@/fonts';
 import { cn } from '@/utils';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'EdTech',
@@ -18,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${Helvetica.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
