@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import frameOne from '@/public/frame1.png';
-import frameTwo from '@/public/frame2.png';
-import frameThr from '@/public/frame3.png';
+
 
 export default function Hero() {
   return (
