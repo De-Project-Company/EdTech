@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 export default function Hero() {
   return (
     <div className="w-full pt-32 md:pt-20">
@@ -36,9 +35,9 @@ export default function Hero() {
         <div className="w-full md:w-6/12 hero-banner h-full">
           <div className="w-full h-full flex justify-center relative">
             <Image
-              src="/framer3.png"
-width="40"
-height="50"
+              src="/frame3.png"
+              width="500"
+              height="100"
               className="h-full w-10/12 object-cover object-top"
               alt=""
             />

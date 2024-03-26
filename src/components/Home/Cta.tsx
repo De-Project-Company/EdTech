@@ -15,8 +15,8 @@ export default function Cta() {
             />
             <Image
               src="/cta2.png"
-              height={255}
-              width={260}
+              height={140}
+              width={300}
               alt=""
               className="hidden md:block"
             />

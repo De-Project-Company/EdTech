@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-white/30 backdrop-blur-sm fixed top-0 z-10">
-      <div className="w-11/12 mx-auto py-4 flex items-center justify-between">
+      <div className="w-11/12 mx-auto py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href={'/'} className="flex gap-4 items-center">
           <div>
@@ -48,14 +48,28 @@ export default function Navbar() {
         {/* Button Tabs */}
         <div className="hidden md:flex gap-2 items-center">
           <button className="p-3 bg-[#D9D3EF] text-white rounded-md">
-            <Image src="/search.png" height="40" width="40" alt="" className="h-4 w-4" />
+            <Image
+              src="/search.png"
+              height="40"
+              width="40"
+              alt=""
+              className="h-4 w-4"
+            />
           </button>
           <button className="py-2 px-6 bg-[#4221B0] text-white rounded-md">
             Register
           </button>
         </div>
         <div className="md:hidden flex gap-2 items-center">
-          <button className="p-3 bg-[#D9D3EF] text-white rounded-md"> <Image src="/search.png" height="40" width="40" alt="" className="h-4 w-4" />
+          <button className="p-3 bg-[#D9D3EF] text-white rounded-md">
+            {' '}
+            <Image
+              src="/search.png"
+              height="40"
+              width="40"
+              alt=""
+              className="h-4 w-4"
+            />
           </button>
           <button
             onClick={toggleMenu}
