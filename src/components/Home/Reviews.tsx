@@ -23,6 +23,8 @@ export default function Reviews() {
 
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
           <ReviewCard />
+          <ReviewCard />
+          <ReviewCard />
         </div>
       </div>
     </div>
