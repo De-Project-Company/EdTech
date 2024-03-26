@@ -1,11 +1,18 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <div className="w-full pt-32 md:pt-20">
+    <div className="w-full pt-32 md:pt-20 overflow-hidden">
       <div className="w-full flex flex-col md:flex-row h-screen justify-between gap-5 md:gap-0">
-        <div className="md:ms-12 w-11/12 mx-auto md:mx-0 md:w-5/12 flex flex-col justify-center">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="md:ms-12 w-11/12 mx-auto md:mx-0 md:w-5/12 flex flex-col justify-center"
+        >
           <div className="mb-6">
             <span className="flex items-center gap-1 mb-2">
               <hr className="w-4 h-0.5 bg-[#4221B0]" />
@@ -31,8 +38,13 @@ export default function Hero() {
               Get Started
             </Link>
           </div>
-        </div>
-        <div className="w-full md:w-6/12 hero-banner h-full">
+        </motion.div>
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full md:w-6/12 hero-banner h-full"
+        >
           <div className="w-full h-full flex justify-center relative">
             <Image
               src="/frame3.png"
@@ -98,7 +110,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

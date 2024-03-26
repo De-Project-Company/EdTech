@@ -1,14 +1,30 @@
+'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <div className="w-full bg-[#0D0723] text-white py-16">
+    <div className="w-full bg-[#0D0723] text-white py-16 overflow-hidden">
       <div className="w-11/12 mx-auto">
-        <div className="mb-8 w-full">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.11, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8 w-full"
+        >
           <span className="ms-0 md:ms-12">Questions? Call +234 657-000-66</span>
-        </div>
+        </motion.div>
         <div className="hidden md:flex flex-col md:flex-row gap-12 items-center text-center md:text-left justify-between">
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.05,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <h1 className="mb-3 font-bold">OUR BRANDS</h1>
             <Link href={'#'} className="mb-2 text-sm">
               Starters Ed-Management
@@ -16,8 +32,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               PayGo
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.08,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               FAQ
             </Link>
@@ -33,8 +58,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Only on BuddySub
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.11,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               Media Center
             </Link>
@@ -47,8 +81,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Legal Notices
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.14,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               Help Center
             </Link>
@@ -61,8 +104,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Contact Us
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.17,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <select className="text-[#0D0723] py-2 px-1 rounded-sm mb-3">
               <option value="English" className="">
                 English
@@ -74,11 +126,20 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               BuddySub
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <div className="md:hidden grid grid-cols-2 gap-12">
-          <div className="flex flex-col">
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.05,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <h1 className="mb-3 font-bold">OUR BRANDS</h1>
             <Link href={'#'} className="mb-2 text-sm">
               Starters Ed-Management
@@ -86,8 +147,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               PayGo
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.08,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               FAQ
             </Link>
@@ -103,8 +173,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Only on BuddySub
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.11,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               Media Center
             </Link>
@@ -117,8 +196,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Legal Notices
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.14,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <Link href={'#'} className="mb-2 text-sm">
               Help Center
             </Link>
@@ -131,8 +219,17 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               Contact Us
             </Link>
-          </div>
-          <div className="flex flex-col">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.17,
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col"
+          >
             <select className="text-[#0D0723] py-2 px-1 rounded-sm mb-3">
               <option value="English" className="">
                 English
@@ -144,7 +241,7 @@ export default function Footer() {
             <Link href={'#'} className="text-sm">
               BuddySub
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
