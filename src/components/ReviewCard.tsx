@@ -1,8 +1,15 @@
+'use client';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function ReviewCard() {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.08, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      className="bg-white p-4 rounded-lg shadow-sm"
+    >
       <div className="flex gap-2 items-center mb-6">
         <div className="h-12 w-12">
           <Image
@@ -26,6 +33,6 @@ export default function ReviewCard() {
       <div className="mt-4 flex justify-end">
         <span>⭐⭐⭐⭐⭐</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
